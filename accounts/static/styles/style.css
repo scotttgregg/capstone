@@ -32,7 +32,6 @@ header::after {
   display: block; }
 
 .logo {
-  float: left;
   font-size: 1.5em;
   margin: 0;
   font-weight: 700; }
@@ -154,31 +153,22 @@ nav .log-in {
   color: white;
   width: 50%; }
 
-@media (min-width: 700px) {
-  .menu-toggle {
-    display: none; }
+/* ------------ Footer ------------- */
+footer {
+  background-color: white;
+  text-align: center;
+  margin: 9% 0 0 0;
+  padding: 23px 5px;
+  line-height: 21px; }
 
-  .site-nav {
-    height: auto;
-    position: relative;
-    background: transparent;
-    float: right;
-    clip-path: initial; }
+footer p {
+  font-size: 1em;
+  margin: 1%; }
 
-  .site-nav li {
-    display: inline-block;
-    border: none; }
+footer img {
+  width: 85px;
+  padding: 15px 5px; }
 
-  .site-nav a {
-    padding: 0;
-    margin-left: 3em; }
-
-  .site-nav a:hover,
-  .site-nav a:focus {
-    background: transparent; }
-
-  .site-nav--icon {
-    display: none; } }
 /* ------------ Ribbons ------------- */
 section.ribbon {
   margin: -10px;
@@ -287,14 +277,6 @@ label {
   margin: 2% 4%;
   display: block; }
 
-input {
-  margin: 10px;
-  width: 90%;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: left; }
-
 textarea {
   margin: 10px 10px;
   width: 90%;
@@ -312,20 +294,6 @@ button {
     color: black; }
   button.button {
     margin-left: 35%; }
-
-/* ------------ Footer ------------- */
-footer {
-  background-color: white;
-  text-align: center;
-  margin: 50px -10px 0px 0px;
-  padding: 21px 40px; }
-
-footer p {
-  font-size: 1em; }
-
-footer img {
-  width: 20%;
-  padding: 0 5px; }
 
 /* ------------ blog ------------- */
 main.container {
@@ -345,6 +313,8 @@ main.container {
       color: black; }
   main.container p.post-time {
     font-size: .75em; }
+  main.container.single_view {
+    padding: 0 0 5% 0; }
 
 a.read-more {
   width: 100%;
@@ -372,7 +342,7 @@ section.create {
 
 form.blog_create {
   margin: 3%;
-  padding: 5% 0% 20% 0%;
+  padding: 5% 0% 35% 0%;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px; }
 form p {
@@ -387,9 +357,67 @@ form input#sub-btn {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-size: 20px;
   padding: 10px 30px;
-  margin: 4% 31%; }
+  margin: 4% 31%;
+  border: none; }
   form input#sub-btn:hover {
     background-color: rgba(169, 242, 0, 0.55);
     color: black; }
+form input, form select, form textarea {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 0% 4% 3% 4%;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left; }
+form textarea {
+  height: auto; }
+
+img.post_img {
+  max-width: 100%;
+  height: auto; }
+
+/* ------------ Media queries ------------- */
+@media (min-width: 767px) {
+  form input#sub-btn {
+    margin: 3% 41%; }
+  form.blog_create {
+    padding: 1% 0 22% 0; }
+
+  section.about img {
+    width: 40%;
+    float: right; } }
+/* ------------ MIN-WIDTH 769 ------------- */
+@media (min-width: 800px) {
+  /* ------------ NAVIGATION ------------- */
+  .menu-toggle {
+    display: none; }
+
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    clip-path: initial; }
+
+  .site-nav li {
+    display: inline-block;
+    border: none; }
+
+  .site-nav a {
+    padding: 0;
+    margin-left: 3em; }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: transparent; }
+
+  .site-nav--icon {
+    display: none; } }
+@media (min-width: 1023px) {
+  section.create {
+    margin-top: -40%; } }
 
 /*# sourceMappingURL=style.css.map */

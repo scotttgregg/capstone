@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse
 from accounts.models import Blog, Category
 from accounts.forms import BlogModelForm
 
@@ -19,14 +19,16 @@ def blog(request):
 
 
 def blog_create(request):
-    form = BlogModelForm(request.POST, request.FILES)
+    form = BlogModelForm()
     if request.method == 'POST':
+        form = BlogModelForm(request.POST, request.FILES)
+
         # tags = request.POST.getlist('tag')
         print(request.POST)
         blog = form.save(commit=False)
         blog.author = request.user
         blog.save()
-
+        return HttpResponseRedirect('/accounts/blog/blog_create')
 
 
     return render(request, 'accounts/blog_create.html', {

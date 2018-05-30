@@ -2,12 +2,13 @@
 
 
 {% load static %}
-
+{% load accounts_tags %}
 
 {% block title %}{{ blog.title }}{% endblock %}
 {% block content %}
-    <main class="container">
+    <main class="container single_view">
 
+        {% blog_image_or_default blog %}
         <!-- Title -->
         <h2 class="blog">{{ blog.title }}</h2>
 
@@ -20,12 +21,6 @@
 
         <!-- Date/Time -->
         <p class="post-time">Posted on {{ blog.date }}</p>
-
-
-
-        <!-- Preview Image -->
-<!--{#        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">#}-->
-
 
         <!--Post content-->
         <p>{{ blog.content }}</p>
