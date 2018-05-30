@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles/reset.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}"/>
 </head>
-<body>
+<body class="overlay">
 <header>
     <div class="container">
         <div class="logo">
@@ -18,32 +18,35 @@
         </div>
         <nav class="site-nav">
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="">Fitness Library</a></li>
-                <li><a href="">Blog</a></li>
+                <li><a href="{% url 'blog_home' %}">Blog</a></li>
                 <li><a href="">Cart</a></li>
                 <li><a href="">Checkout</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="">Shop Custom Programs</a></li>
                 <li><a href="">Log Out</a></li>
                 <li><a href="">Profile</a></li>
             </ul>
         </nav>
+        <nav class="perm-nav">
+        <ul>
+            <li><a class="action sign-up" href="#">Sign up</a></li>
+            <li><a class="action log-in" href="#">Log In</a></li>
+        </ul>
+    </nav>
         <div class="menu-toggle">
             <div class="hamburger"></div>
         </div>
     </div>
-    <nav class="perm-nav">
-        <ul>
-            <li><a class="action sign-up" href="#">Sign up</a></li>
-            <li><a class="action shop" href="#">Shop Custom Programs</a></li>
-        </ul>
-    </nav>
+
 </header>
 {% block content %}
 {% endblock %}
 <footer>
-    <img src="#" id="instagram" class="social-media">
-    <img src="#" id="facebook" class="social-media">
+    <div class="social-icons">
+        <img src="{% static 'accounts/img/Facebook.svg' %}" id="instagram" class="social-media">
+        <img src="{% static 'accounts/img/Instagram.svg' %}" id="facebook" class="social-media">
+    </div>
     <p>© Primal Prowess | Rob Bozada | Portland, OR</p>
     <p>Website by Scott Schultz Design</p>
 </footer>

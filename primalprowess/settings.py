@@ -84,6 +84,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
+AUTH_USER_MODEL = 'accounts.User'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -123,3 +125,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'accounts', 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'

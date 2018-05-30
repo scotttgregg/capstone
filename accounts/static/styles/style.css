@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 body {
-  background-image: url("/static/accounts/img/rob_correct_crop.jpg");
+  background: linear-gradient(rgba(64, 64, 64, 0.3), rgba(64, 64, 64, 0.3)), url("/static/accounts/img/rob_correct_crop.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   font-family: 'Open Sans', sans-serif; }
 
-section.ribbon {
-  background-color: rgba(169, 242, 0, 0.55); }
+main {
+  margin: 0; }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, h5, p {
   margin: 5%; }
 
 /* ------------ NAVIGATION ------------- */
@@ -20,7 +20,7 @@ h1, h2, h3, p {
   margin: 0 auto; }
 
 header {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.5);
   color: #a9f200;
   margin-bottom: 500px;
   padding: 1.75em 0;
@@ -50,10 +50,11 @@ span.rob {
 .site-nav {
   position: absolute;
   top: 100%;
-  right: 0%;
-  background: rgba(0, 0, 0, 0.75);
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
   clip-path: circle(0px at top right);
   transition: clip-path ease-in-out 700ms;
+  z-index: 1;
   /*   display: none; */ }
 
 .site-nav--open {
@@ -66,7 +67,7 @@ span.rob {
   list-style: none; }
 
 .site-nav li {
-  border-bottom: 1px solid #575766; }
+  border-bottom: 1px solid #404040; }
 
 .site-nav li:last-child {
   border-bottom: none; }
@@ -80,8 +81,8 @@ span.rob {
 
 .site-nav a:hover,
 .site-nav a:focus {
-  background: #E4B363;
-  color: #464655; }
+  background: rgba(169, 242, 0, 0.55);
+  color: #404040; }
 
 .site-nav--icon {
   display: inline-block;
@@ -92,7 +93,7 @@ span.rob {
   color: rgba(255, 255, 255, 0.4); }
 
 .menu-toggle {
-  padding: 1em;
+  padding: 1.5em;
   position: absolute;
   top: .5em;
   right: .5em;
@@ -140,16 +141,16 @@ span.rob {
   float: left; }
 
 .action:hover {
-  background-color: rgba(169, 242, 0, 0.55);
-  color: black; }
+  background-color: black;
+  color: white; }
 
 nav .sign-up {
-  background-color: black;
+  background-color: #F15025;
   color: white;
   width: 50%; }
 
-nav .shop {
-  background-color: green;
+nav .log-in {
+  background-color: #3581B8;
   color: white;
   width: 50%; }
 
@@ -178,6 +179,217 @@ nav .shop {
 
   .site-nav--icon {
     display: none; } }
-/* ------------ END NAVIGATION ------------- */
+/* ------------ Ribbons ------------- */
+section.ribbon {
+  margin: -10px;
+  background-color: rgba(169, 242, 0, 0.55);
+  padding: 3em 2em; }
+
+section.ribbon h2 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5em; }
+
+section.ribbon a {
+  padding: 5px 7px;
+  background-color: #404040;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px; }
+
+section.ribbon a:hover {
+  background-color: black; }
+
+div.button {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  padding: 20px 0; }
+
+div.book-button {
+  text-align: right; }
+
+section.ribbon img {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto; }
+
+/* ------------ ABOUT ------------- */
+section.about {
+  background: rgba(255, 255, 255, 0.75);
+  margin: 10px 0px;
+  padding: 5% 0; }
+
+.about h2 {
+  font-size: 1.25em;
+  font-weight: 800;
+  text-align: center; }
+
+section.about img {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%; }
+
+/* ------------ PRODUCTS ------------- */
+#product-section {
+  text-align: center;
+  padding: 10%; }
+  #product-section h2 {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: white; }
+  #product-section h3 {
+    font-size: 1em;
+    font-weight: 800;
+    color: white; }
+  #product-section img {
+    width: 250px; }
+  #product-section h4 {
+    margin: -2px auto 0 auto;
+    padding: 5% 0;
+    background-color: #404040;
+    color: white;
+    text-decoration: none;
+    width: 250px; }
+  #product-section h4:hover {
+    background-color: black; }
+  #product-section li {
+    padding-top: 8%; }
+  #product-section .btn {
+    display: none; }
+
+/* ------------ Contact ------------- */
+section.contact h2 {
+  font-size: 1.75em;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  padding: 0 10%; }
+section.contact h3 {
+  font-size: 1em;
+  font-weight: 200;
+  color: white;
+  text-align: center;
+  padding: 0 10%;
+  line-height: 1.5em; }
+
+form#contact-form {
+  margin: 3%;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px; }
+
+label {
+  margin: 2% 4%;
+  display: block; }
+
+input {
+  margin: 10px;
+  width: 90%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left; }
+
+textarea {
+  margin: 10px 10px;
+  width: 90%;
+  height: auto; }
+
+button {
+  background-color: #404040;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+  padding: 10px 30px; }
+  button:hover {
+    background-color: rgba(169, 242, 0, 0.55);
+    color: black; }
+  button.button {
+    margin-left: 35%; }
+
+/* ------------ Footer ------------- */
+footer {
+  background-color: white;
+  text-align: center;
+  margin: 50px -10px 0px 0px;
+  padding: 21px 40px; }
+
+footer p {
+  font-size: 1em; }
+
+footer img {
+  width: 20%;
+  padding: 0 5px; }
+
+/* ------------ blog ------------- */
+main.container {
+  background: rgba(255, 255, 255, 0.75);
+  margin: 10px 10px;
+  padding: 5% 0; }
+  main.container h2 {
+    font-size: 2em;
+    color: black;
+    font-weight: 800; }
+  main.container h5 {
+    font-size: 1.25em; }
+  main.container a.author {
+    text-decoration: none;
+    color: #3581B8; }
+    main.container a.author:hover {
+      color: black; }
+  main.container p.post-time {
+    font-size: .75em; }
+
+a.read-more {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 0 20px;
+  padding: 5px 20px;
+  background-color: #404040;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px; }
+  a.read-more:hover {
+    background-color: rgba(169, 242, 0, 0.55);
+    color: black; }
+
+.card-footer {
+  margin: 2em;
+  font-size: .75em; }
+
+button.button {
+  margin-left: 35%; }
+
+/* ------------ blog ADMIN ------------- */
+section.create {
+  margin-top: -58%; }
+
+form.blog_create {
+  margin: 3%;
+  padding: 5% 0% 20% 0%;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px; }
+form p {
+  margin: 0; }
+form select {
+  margin: 3% 5% 4% 5%; }
+form input#sub-btn {
+  width: auto;
+  background-color: #404040;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+  padding: 10px 30px;
+  margin: 4% 31%; }
+  form input#sub-btn:hover {
+    background-color: rgba(169, 242, 0, 0.55);
+    color: black; }
 
 /*# sourceMappingURL=style.css.map */

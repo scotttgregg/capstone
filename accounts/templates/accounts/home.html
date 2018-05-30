@@ -7,10 +7,13 @@
 
 <main>
     <section class="ribbon" id="top-ribbon">
-        <p>Get a custom 4-week program made just for you!</p>
-        <p><a href="#">Learn More</a></p>
+        <h2>Get a custom 4-week program made specifically for you!</h2>
+        <div class="button">
+            <a class="button" href="#">Learn More</a>
+        </div>
     </section>
     <section class="about">
+        <img src="{% static 'accounts/img/rob-headshot.jpg' %}">
         <h2>The Primal Prowess Philosophy</h2>
         <p class="philosophy">I consider myself to be an "outside of the box" practitioner. I'm a divergent thinker and
             believe that one cannot
@@ -31,25 +34,54 @@
             subscribing to this site, you will have the resources required to pull back on the throttle of your primal,
             infinite potential.</p>
     </section>
-    <section>
-        <h2>Personalized Training Programs</h2>
-        <h3>Click on the programs to learn more!</h3>
-        <a class="products" id="4-week" href="#"> <img src="#"></a>
-        <a class="products" id="primal-reclamation" href="#"> <img src="#"></a>
-
-    </section>
 
     <section class="ribbon" id="book-ribbon">
-        <a href="#">Athlematics</a>
-        <img src="#" class="book" alt="Athlematics by Rob Bozada">
+        <img src="{% static 'accounts/img/book.jpg' %}" class="book" alt="Athlematics by Rob Bozada">
+        <p>Athlematics strives to provide the athlete and coach with viable, relevant knowledge regarding athletic
+            training methodologies via supporting sub-practices such as: kinesiology, psychology, physics, cybernetics,
+            and physiology.</p>
+        <div class="button">
+            <a class="book-button" id="book-btn" href="#">Buy On Amazon</a>
+        </div>
+    </section>
+
+    <section id="product-section">
+        <h2>Personalized Training Programs</h2>
+        <h3>Click on the programs to learn more!</h3>
+        <ul>
+            <li class="products">
+                <a href="#">
+                    <img src="{% static 'accounts/img/rob-deadlift.jpg' %}">
+                    <button class="btn">Add To Cart</button>
+                    <h4>Personalized 4-Week Training Program</h4>
+                </a>
+            </li>
+            <li class="products">
+                <a href="#">
+                    <img src="{% static 'accounts/img/rob-sprint.jpg' %}">
+                    <button class="btn">Add To Cart</button>
+                    <h4>Primal Reclamation Package</h4>
+                </a>
+            </li>
+            <li class="products">
+                <a href="#">
+                    <img src="{% static 'accounts/img/rob-plank.jpg' %}">
+                    <button class="btn">Add To Cart</button>
+                    <h4>Place Holder Text</h4>
+                </a>
+            </li>
+        </ul>
+
     </section>
 
     <section class="ribbon" id="bottom-ribbon">
-        <p>Unleash your Primal Prowess!</p>
-        <p><a href="#">Learn More</a></p>
+        <h2>Unleash your Primal Prowess!</h2>
+        <div class="button">
+            <a class="button" href="#">Learn More</a>
+        </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact">
         <h2>Contact</h2>
         <h3>Have questions about these products? Shoot me a message!</h3>
         <form id="contact-form" action="/my-handling-form-page" method="post">
@@ -67,21 +99,17 @@
 
             <div>
                 <label for="msg">Message:</label>
-                <textarea id="msg" name="user_message"></textarea>
+                <textarea id="msg" name="user_message" rows="4" cols="50"></textarea>
             </div>
 
             <div class="button">
-                   
-                <button type="submit">Send your message</button>
-                 
+                <button type="submit">Submit</button>
             </div>
         </form>
     </section>
 
 
 </main>
-
-
 
 
 {% endblock %}

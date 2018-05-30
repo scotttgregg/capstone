@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-$ribbon-color: rgba(169, 242, 0, 0.55);
-$theme-color: rgba(169, 242, 0, 1);
-$background-color01: rgb(255,255,255);
-$background-color02: rgb(211,211,211);
-$menu-color: rgba(0,0,0, .75);
-$black: rgb(0,0,0);
+$ribbon-color-green: rgba(169, 242, 0, 0.55);
+$theme-color-green: rgba(169, 242, 0, 1);
+$background-color-white: rgb(255, 255, 255);
+$background-color-grey: rgba(64, 64, 64, .3);
+$button-color-grey: rgb(64, 64, 64);
+$menu-color-darkgreay: rgba(0, 0, 0, .5);
+$black: rgb(0, 0, 0);
+$white: rgba(255, 255, 255, .75);
+$call-to-action01: #F15025;
+$call-to-action02: #3581B8;
 
 body {
-  background-image: url("/static/accounts/img/rob_correct_crop.jpg");
+  background: linear-gradient(
+                  $background-color-grey,
+                  $background-color-grey
+  ),
+  url("/static/accounts/img/rob_correct_crop.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -16,11 +24,11 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-section.ribbon {
-  background-color: $ribbon-color;
+main {
+  margin: 0;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, h5, p {
   margin: 5%;
 }
 
@@ -33,8 +41,8 @@ h1, h2, h3, p {
 }
 
 header {
-  background: $menu-color;
-  color: $theme-color;
+  background: $menu-color-darkgreay;
+  color: $theme-color-green;
   margin-bottom: 500px;
   padding: 1.75em 0;
   position: relative;
@@ -68,16 +76,17 @@ span.rob {
 .site-nav {
   position: absolute;
   top: 100%;
-  right: 0%;
-  background: $menu-color;
+  right: 0;
+  background: rgba(0, 0, 0, .85);
   clip-path: circle(0px at top right);
   transition: clip-path ease-in-out 700ms;
-/*   display: none; */
+  z-index: 1;
+  /*   display: none; */
 }
 
 .site-nav--open {
   clip-path: circle(250% at top right);
-/*   display: block; */
+  /*   display: block; */
 }
 
 .site-nav ul {
@@ -87,7 +96,7 @@ span.rob {
 }
 
 .site-nav li {
-  border-bottom: 1px solid #575766;
+  border-bottom: 1px solid $button-color-grey;
 }
 
 .site-nav li:last-child {
@@ -104,8 +113,8 @@ span.rob {
 
 .site-nav a:hover,
 .site-nav a:focus {
-  background: #E4B363;
-  color: #464655;
+  background: $ribbon-color-green;
+  color: $button-color-grey;
 }
 
 .site-nav--icon {
@@ -114,11 +123,11 @@ span.rob {
   margin-right: 1em;
   width: 1.1em;
   text-align: right;
-  color: rgba(255,255,255,.4);
+  color: rgba(255, 255, 255, .4);
 }
 
 .menu-toggle {
-  padding: 1em;
+  padding: 1.5em;
   position: absolute;
   top: .5em;
   right: .5em;
@@ -175,18 +184,18 @@ span.rob {
 }
 
 .action:hover {
-  background-color: $ribbon-color;
-  color: black;
+  background-color: $black;
+  color: $background-color-white;
 }
 
 nav .sign-up {
-  background-color: black;
+  background-color: $call-to-action01;
   color: white;
   width: 50%;
 }
 
-nav .shop {
-  background-color: green;
+nav .log-in {
+  background-color: $call-to-action02;
   color: white;
   width: 50%;
 }
@@ -226,4 +235,276 @@ nav .shop {
 
 }
 
-/* ------------ END NAVIGATION ------------- */
+/* ------------ Ribbons ------------- */
+
+section.ribbon {
+  margin: -10px;
+  background-color: $ribbon-color-green;
+  padding: 3em 2em;
+}
+
+section.ribbon h2 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+section.ribbon a {
+  padding: 5px 7px;
+  background-color: $button-color-grey;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+section.ribbon a:hover {
+  background-color: $black;
+}
+
+div.button {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  padding: 20px 0;
+}
+
+div.book-button {
+  text-align: right;
+}
+
+section.ribbon img {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ------------ ABOUT ------------- */
+
+section.about {
+  background: $white;
+  margin: 10px 0px;
+  padding: 5% 0;
+
+}
+
+.about h2 {
+  font-size: 1.25em;
+  font-weight: 800;
+  text-align: center;
+}
+
+section.about img {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+}
+
+/* ------------ PRODUCTS ------------- */
+
+#product-section {
+  h2 {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: white;
+  }
+  h3 {
+    font-size: 1em;
+    font-weight: 800;
+    color: white;
+  }
+  img {
+    width: 250px;
+  }
+  h4 {
+    margin: -2px auto 0 auto;
+    padding: 5% 0;
+    background-color: $button-color-grey;
+    color: white;
+    text-decoration: none;
+    width: 250px;
+  }
+  h4:hover {
+    background-color: $black;
+  }
+  li {
+    padding-top: 8%;
+  }
+  .btn {
+    display: none;
+  }
+  text-align: center;
+  padding: 10%;
+}
+
+/* ------------ Contact ------------- */
+
+section.contact {
+  h2 {
+    font-size: 1.75em;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    padding: 0 10%;
+  }
+  h3 {
+    font-size: 1em;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+    padding: 0 10%;
+    line-height: 1.5em;
+  }
+
+}
+
+form#contact-form {
+  margin: 3%;
+  background-color: $white;
+  border-radius: 10px;
+}
+
+label {
+  margin: 2% 4%;
+  display: block;
+}
+
+input {
+  margin: 10px;
+  width: 90%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+textarea {
+  margin: 10px 10px;
+  width: 90%;
+  height: auto;
+  //padding: 50px 100px;
+}
+
+button {
+  background-color: $button-color-grey;
+  color: $background-color-white;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+  padding: 10px 30px;
+  &:hover {
+    background-color: $ribbon-color-green;
+    color: $black;
+  }
+  &.button {
+    margin-left: 35%;
+  }
+}
+
+/* ------------ Footer ------------- */
+
+footer {
+  background-color: $background-color-white;
+  text-align: center;
+  margin: 50px -10px 0px 0px;
+  padding: 21px 40px;
+}
+
+footer p {
+  font-size: 1em;
+}
+
+footer img {
+  width: 20%;
+  padding: 0 5px;
+
+}
+
+/* ------------ blog ------------- */
+
+main.container {
+  background: $white;
+  margin: 10px 10px;
+  padding: 5% 0;
+  h2 {
+    font-size: 2em;
+    color: $black;
+    font-weight: 800;
+  }
+  h5 {
+    font-size: 1.25em;
+  }
+  a.author {
+    text-decoration: none;
+    color: $call-to-action02;
+    &:hover {
+      color: $black;
+    }
+  }
+  p.post-time {
+    font-size: .75em;
+  }
+}
+
+a.read-more {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 0 20px;
+  padding: 5px 20px;
+  background-color: $button-color-grey;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  &:hover {
+    background-color: $ribbon-color-green;
+    color: $black;
+  }
+}
+
+.card-footer {
+  margin: 2em;
+  font-size: .75em;
+}
+
+button.button {
+  margin-left: 35%;
+}
+
+/* ------------ blog ADMIN ------------- */
+
+section.create {
+  margin-top: -58%
+}
+
+form {
+  &.blog_create {
+    margin: 3%;
+    padding: 5% 0% 20% 0%;
+    background-color: $white;
+    border-radius: 10px;
+  }
+  p {
+    margin: 0;
+  }
+  select {
+    margin: 3% 5% 4% 5%;
+  }
+  input#sub-btn {
+    width: auto;
+    background-color: $button-color-grey;
+    color: $background-color-white;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 20px;
+    padding: 10px 30px;
+    margin: 4% 31%;
+    &:hover {
+      background-color: $ribbon-color-green;
+      color: $black;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block title %}{{ blog.title }}{% endblock %}
+{% block content %}
+    <main class="container">
+
+        <!-- Title -->
+        <h2 class="blog">{{ blog.title }}</h2>
+
+        <!-- Author -->
+        <p class="lead">
+            by
+            <a href="#" class="author">{{ blog.author.username }}</a>
+        </p>
+
+
+        <!-- Date/Time -->
+        <p class="post-time">Posted on {{ blog.date }}</p>
+
+
+
+        <!-- Preview Image -->
+<!--{#        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">#}-->
+
+
+        <!--Post content-->
+        <p>{{ blog.content }}</p>
+
+
+
+        <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" cols="50"></textarea>
+                    </div>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
