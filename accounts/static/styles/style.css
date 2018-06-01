@@ -373,7 +373,7 @@ form input, form select, form textarea {
   cursor: pointer;
   float: left; }
 form textarea {
-  height: auto; }
+  height: 100px; }
 
 img.post_img {
   max-width: 100%;

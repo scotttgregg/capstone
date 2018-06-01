@@ -1,6 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, User
 from django.utils.text import slugify
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 
 
 def profile_img_uh(instance, filename):
@@ -10,9 +13,6 @@ def profile_img_uh(instance, filename):
 class User(AbstractUser):
     bio = models.TextField()
     phone = models.CharField(max_length=30)
-    # height = models.CharField(max_length=30)
-    # weight = models.CharField(max_length=30)
-    # fitness_goals = models.CharField(max_length=300)
 
 
 class ProfileImage(models.Model):
@@ -35,6 +35,8 @@ class Blog(models.Model):
     category = models.ForeignKey('Category', default=1, related_name='blogs', on_delete=models.SET_DEFAULT)
     image = models.ImageField(upload_to=blog_image_uh, blank=True, null=True)
     alt_text = models.CharField(max_length=30, blank=True, null=True)
+    youtube = models.CharField(max_length=255, blank=True, null=True)
+    fitness_library = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
@@ -82,3 +84,18 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=500, blank=True)
+    height = models.CharField(max_length=30, blank=True)
+    weight = models.CharField(max_length=30, blank=True)
+    goals = models.CharField(max_length=500, blank=True)
+
+
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()

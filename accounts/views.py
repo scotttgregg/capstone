@@ -1,6 +1,10 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse
 from accounts.models import Blog, Category
 from accounts.forms import BlogModelForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
+from django.shortcuts import render, redirect
+from Capstone.primalprowess.forms import SignUpForm
 
 
 def home(request):
@@ -13,8 +17,9 @@ def blog_single_view(request, cat, slug):
     return render(request, 'accounts/blog_single_view.html', {'blog': blog, 'cat': cat})
 
 
+@login_required
 def blog(request):
-    blog_list = Blog.objects.all()
+    blog_list = Blog.objects.filter(fitness_library=False)
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
 
 
@@ -30,9 +35,34 @@ def blog_create(request):
         blog.save()
         return HttpResponseRedirect('/accounts/blog/blog_create')
 
-
     return render(request, 'accounts/blog_create.html', {
         # 'tag': Tag.objects.all()
         'cat': Category.objects.all(),
         'form': form
     })
+
+
+def fitness_library(request):
+    blog_list = Blog.objects.filter(fitness_library=True)
+    return render(request, "accounts/blog_home.html", {'blogs': blog_list})
+
+
+def login(request):
+    return render(request, "accounts/login.html")
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+            user.profile.birth_date = form.cleaned_data.get('birth_date')
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {'form': form})
