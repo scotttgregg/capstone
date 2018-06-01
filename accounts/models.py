@@ -1,25 +1,31 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser, User
-from django.utils.text import slugify
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+from __future__ import unicode_literals
 
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.utils.text import slugify
 
 
 def profile_img_uh(instance, filename):
-    return 'users/{}/img/{}'.format(instance.user.username, filename)
+    return 'users/{}/img/{}'.format(instance.username, filename)
 
 
 class User(AbstractUser):
+    # username = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     bio = models.TextField()
-    phone = models.CharField(max_length=30)
+    email = models.CharField(max_length=30)
+    height = models.CharField(max_length=30, blank=True)
+    weight = models.CharField(max_length=30, blank=True)
+    goals = models.CharField(max_length=500, blank=True)
+    profile_img = models.ImageField(upload_to=profile_img_uh, blank=True, null=True)
 
-
-class ProfileImage(models.Model):
-    alt_text = models.CharField(max_length=255, blank=True, null=True)
-    file = models.ImageField(upload_to=profile_img_uh)
-    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='images')
-    description = models.TextField(blank=True, null=True)
+    # alt_text = models.CharField(max_length=255, blank=True, null=True)
+    # file = models.ImageField(upload_to=profile_img_uh)
+    # user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='images')
+    # description = models.TextField(blank=True, null=True)
+    def __str__(self):
+        return self.first_name
 
 
 def blog_image_uh(instance, filename):
@@ -84,18 +90,3 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
-
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
-    height = models.CharField(max_length=30, blank=True)
-    weight = models.CharField(max_length=30, blank=True)
-    goals = models.CharField(max_length=500, blank=True)
-
-
-@receiver(post_save, sender=User)
-def update_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-    instance.profile.save()

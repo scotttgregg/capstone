@@ -1,8 +1,6 @@
 from django import forms
-from accounts.models import Blog
+from accounts.models import Blog, User
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-
 
 
 class BlogModelForm(forms.ModelForm):
@@ -12,8 +10,6 @@ class BlogModelForm(forms.ModelForm):
 
 
 class SignUpForm(UserCreationForm):
-    # birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
-
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )

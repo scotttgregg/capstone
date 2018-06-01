@@ -1,9 +1,9 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse
+from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse, render, redirect
 from accounts.models import Blog, Category
 from accounts.forms import BlogModelForm, SignUpForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
+from django.contrib.auth import login as loginf, authenticate
+
 
 
 
@@ -52,16 +52,23 @@ def login(request):
 
 
 def signup(request):
+    form = SignUpForm()
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            user.refresh_from_db()  # load the profile instance created by the signal
+            user = form.save(commit=False)
+            # user.refresh_from_db()  # load the profile instance created by the signal
             user.save()
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)
-            login(request, user)
-            return redirect('home')
-    else:
-        form = SignUpForm()
+            if user is not None:
+                loginf(request, user)
+                return redirect('profile_edit')
     return render(request, 'accounts/signup.html', {'form': form})
+
+
+def profile(request):
+    return render(request, "accounts/profile.html")
+
+def profile_edit(request):
+    return render(request, "accounts/profile_edit.html")
