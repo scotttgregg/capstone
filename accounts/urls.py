@@ -11,4 +11,5 @@ urlpatterns = [
     path('login/', login, {'template_name': 'accounts/login.html'}, name='login'),
     path('logout/', logout, name='logout'),
     path('fitness_library/', views.fitness_library, name='fit_lib'),
+    path('signup/', views.signup, name='signup')
 ]
