@@ -491,9 +491,60 @@ img {
   }
 }
 
+/* ------------ Log In ------------- */
+
+main.login {
+  div.login {
+    background-color: $white;
+    margin: -70% 1% 55% 2%;
+    border-radius: 5px;
+    padding: 13% 0% 21% 0%;
+  }
+  label {
+    margin: 2% 22%;
+    display: inline-block;
+    padding: 15% 7%
+  }
+  input {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 0% 0% -2% 20%;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+  }
+  input.btn {
+    margin: 4% 0% 8% 22%;
+    //padding: -7px -7px;
+    width: 50%;
+  }
+}
+
+/* ------------ Sign Up ------------- */
+
+main.sign_up {
+  h1 {
+    font-size: 2em;
+    color: $background-color-white;
+    text-align: center;
+  }
+  div {
+    background-color: $white;
+    margin: 10% 2%;
+    border-radius: 5px;
+  }
+  form {
+    padding: 5% 0%;
+  }
+  button {
+    margin: 10% 0% 7% 33%;
+  }
+  margin: -65% 0px 30% 0;
+}
+
 /* ------------ Media queries ------------- */
-
-
 
 @media (min-width: 767px) {
 
@@ -518,7 +569,7 @@ img {
 
 @media (min-width: 800px) {
 
-/* ------------ NAVIGATION ------------- */
+  /* ------------ NAVIGATION ------------- */
 
   .menu-toggle {
     display: none;

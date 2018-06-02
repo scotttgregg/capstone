@@ -379,6 +379,45 @@ img.post_img {
   max-width: 100%;
   height: auto; }
 
+/* ------------ Log In ------------- */
+main.login div.login {
+  background-color: rgba(255, 255, 255, 0.75);
+  margin: -70% 1% 55% 2%;
+  border-radius: 5px;
+  padding: 13% 0% 21% 0%; }
+main.login label {
+  margin: 2% 22%;
+  display: inline-block;
+  padding: 15% 7%; }
+main.login input {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 0% 0% -2% 20%;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left; }
+main.login input.btn {
+  margin: 4% 0% 8% 22%;
+  width: 50%; }
+
+/* ------------ Sign Up ------------- */
+main.sign_up {
+  margin: -65% 0px 30% 0; }
+  main.sign_up h1 {
+    font-size: 2em;
+    color: white;
+    text-align: center; }
+  main.sign_up div {
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 10% 2%;
+    border-radius: 5px; }
+  main.sign_up form {
+    padding: 5% 0%; }
+  main.sign_up button {
+    margin: 10% 0% 7% 33%; }
+
 /* ------------ Media queries ------------- */
 @media (min-width: 767px) {
   form input#sub-btn {

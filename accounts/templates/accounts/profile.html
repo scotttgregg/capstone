@@ -3,17 +3,18 @@
 
 {% block content %}
     <main>
-        {% profile_image_or_default user %}
-        <p>Profile Picture</p>
-        <p>Username: {{ user.username }} </p>
-        <p>Bio: {{ user.bio }}</p>
-        <p>Phone: {{ user.email }}</p>
-        <p>Height: {{ user.height }}</p>
-        <p>Weight: {{ user.weight }}</p>
-        <p>Fitness Goals: {{ user.goals }}</p>
+        <div class="profile_page">
+            {% profile_image_or_default user %}
+            <p>Profile Picture</p>
+            <p>Username: {{ user.username }} </p>
+            <p>Bio: {{ user.bio }}</p>
+            <p>Phone: {{ user.email }}</p>
+            <p>Height: {{ user.height }}</p>
+            <p>Weight: {{ user.weight }}</p>
+            <p>Fitness Goals: {{ user.goals }}</p>
 
-        <a class="edit_profile" href="profile_edit.html">Edit Profile</a>
-
+            <a class="edit_profile" href="profile_edit.html">Edit Profile</a>
+        </div>
     </main>
 
 {% endblock %}
