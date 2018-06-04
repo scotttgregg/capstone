@@ -204,7 +204,7 @@ nav .log-in {
 footer {
   background-color: $background-color-white;
   text-align: center;
-  margin: 9% 0 0 0;
+  margin: 400px 0 0 0;
   padding: 23px 5px;
   line-height: 21px;
 }
@@ -271,7 +271,7 @@ section.ribbon img {
 
 section.about {
   background: $white;
-  margin: 10px 0px;
+  margin: 10px 0;
   padding: 5% 0;
 
 }
@@ -443,7 +443,7 @@ section.create {
 form {
   &.blog_create {
     margin: 3%;
-    padding: 5% 0% 35% 0%;
+    padding: 5% 0 35% 0;
     background-color: $white;
     border-radius: 10px;
   }
@@ -494,21 +494,25 @@ img {
 /* ------------ Log In ------------- */
 
 main.login {
+  h1 {
+    font-size: 3em;
+    color: white;
+    text-align: center;
+  }
   div.login {
     background-color: $white;
-    margin: -70% 1% 55% 2%;
     border-radius: 5px;
-    padding: 13% 0% 21% 0%;
+    width: 23em;
+    height: 23em;
+  }
+  form {
+    padding: 100px 57px 10px 63px;
   }
   label {
-    margin: 2% 22%;
     display: inline-block;
-    padding: 15% 7%
   }
   input {
-    width: 90%;
     padding: 12px 20px;
-    margin: 0% 0% -2% 20%;
     display: inline-block;
     border: 1px solid black;
     border-radius: 4px;
@@ -516,23 +520,37 @@ main.login {
     float: left;
   }
   input.btn {
-    margin: 4% 0% 8% 22%;
-    //padding: -7px -7px;
-    width: 50%;
+    width: 200px;
+    margin: 40px 144px 27px 22px;
+    background-color: #404040;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 20px;
+    &:hover {
+      background-color: rgba(169, 242, 0, 0.55);
+      color: black;
+    }
   }
+
+  a {
+    margin: 0 95px;
+    display: inline;
+  }
+  margin: -300px 0 0 0;
 }
 
 /* ------------ Sign Up ------------- */
 
 main.sign_up {
   h1 {
-    font-size: 2em;
+    font-size: 3em;
     color: $background-color-white;
     text-align: center;
   }
   div {
     background-color: $white;
-    margin: 10% 2%;
     border-radius: 5px;
   }
   form {
@@ -541,7 +559,30 @@ main.sign_up {
   button {
     margin: 10% 0% 7% 33%;
   }
-  margin: -65% 0px 30% 0;
+  margin: -300px auto 0 auto;
+  width: 360px;
+}
+
+/* ------------ Profile Page ------------- */
+
+main.profile_page {
+  div {
+    padding: 0 0 30px 0;
+    background-color: $white;
+    border-radius: 5px;
+    img.profile_pic {
+      max-width: 300px;
+      border-radius: 50%;
+      padding: 30px;
+    }
+    section {
+      width: 360px;
+      background-color: grey;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+  margin: -430px 2% 0 2%;
 }
 
 /* ------------ Media queries ------------- */

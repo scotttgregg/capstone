@@ -3,6 +3,41 @@
 
 {% block content %}
 
+    <main class="profile_edit">
+        <div class="profile_edit">
+            <section class="profile_pic">
+                {% profile_image_or_default user %}
+                <h4>Change profile picture...</h4>
+                <input name="profile_img" type="file" class="change_pic" form="edit_profile_form">
+            </section>
+            <form id="edit_profile_form" role="form" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                <label class="h_and_w">Height</label>
+                <textarea name="height" id="height" form="edit_profile_form">{{ user.height }}</textarea>
 
+                <label class="h_and_w">Weight</label>
+                <textarea name="weight" id="weight" form="edit_profile_form">{{ user.weight }}</textarea>
+
+                <label class="bio">Bio:</label>
+                <textarea name="bio" id="bio" form="edit_profile_form">{{ user.bio }}</textarea>
+
+                <label class="h_and_w">Fitness Goals:</label>
+                <textarea name="goals" id="goals" form="edit_profile_form">{{ user.goals }}</textarea>
+
+                <label class="email">Email:</label>
+                <textarea name="email" id="email" form="edit_profile_form">{{ user.email }}</textarea>
+
+                <div class="">
+                    <input class="btn btn-primary" value="Save Changes" type="submit">
+                    <span></span>
+                    <input class="btn btn-default" value="Reset" type="reset">
+                    <span></span>
+                    <a class="cancel" href="{% url 'profile' user.username %}">Cancel</a>
+                </div>
+
+
+            </form>
+        </div>
+    </main>
 
 {% endblock %}

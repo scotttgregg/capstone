@@ -2,18 +2,18 @@
 {% load accounts_tags %}
 
 {% block content %}
-    <main>
+    <main class="profile_page">
         <div class="profile_page">
-            {% profile_image_or_default user %}
-            <p>Profile Picture</p>
+            <section class="profile_pic">
+                {% profile_image_or_default user %}
+            </section>
             <p>Username: {{ user.username }} </p>
-            <p>Bio: {{ user.bio }}</p>
-            <p>Phone: {{ user.email }}</p>
             <p>Height: {{ user.height }}</p>
             <p>Weight: {{ user.weight }}</p>
+            <p>Bio: {{ user.bio }}</p>
             <p>Fitness Goals: {{ user.goals }}</p>
-
-            <a class="edit_profile" href="profile_edit.html">Edit Profile</a>
+            <p>Email: {{ user.email }}</p>
+            <a class="edit_profile" href="{% url 'profile_edit' %}">Edit Profile</a>
         </div>
     </main>
 

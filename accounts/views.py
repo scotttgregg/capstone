@@ -5,8 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as loginf, authenticate
 
 
-
-
 def home(request):
     return render(request, "accounts/home.html")
 
@@ -70,5 +68,22 @@ def signup(request):
 def profile(request):
     return render(request, "accounts/profile.html")
 
+
 def profile_edit(request):
+    if request.method == "POST":
+        print(request.POST)
+        print(request.FILES)
+
+        user = request.user
+        image = request.FILES.get('profile_img')
+        if image:
+            user.image = image
+        user.height = request.POST.get('height')
+        user.weight = request.POST.get('weight')
+        user.bio = request.POST.get('bio')
+        user.goals = request.POST.get('goals')
+        user.email = request.POST.get('email')
+        user.save()
+
+        return HttpResponseRedirect(reverse("profile", args=[request.user.username]))
     return render(request, "accounts/profile_edit.html")
