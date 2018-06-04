@@ -5,13 +5,14 @@
 
     <main class="profile_edit">
         <div class="profile_edit">
-            <section class="profile_pic">
-                {% profile_image_or_default user %}
-                <h4>Change profile picture...</h4>
-                <input name="profile_img" type="file" class="change_pic" form="edit_profile_form">
-            </section>
+{#            <section class="profile_pic">#}
+{#                {% profile_image_or_default user %}#}
+{#                <h4>Change profile picture...</h4>#}
+{#                <input name="profile_img" type="file" class="change_pic" form="edit_profile_form">#}
+{#            </section>#}
             <form id="edit_profile_form" role="form" enctype="multipart/form-data" method="post">
                 {% csrf_token %}
+
                 <label class="h_and_w">Height</label>
                 <textarea name="height" id="height" form="edit_profile_form">{{ user.height }}</textarea>
 
@@ -32,7 +33,7 @@
                     <span></span>
                     <input class="btn btn-default" value="Reset" type="reset">
                     <span></span>
-                    <a class="cancel" href="{% url 'profile' user.username %}">Cancel</a>
+                    <a class="cancel" href="{% url 'profile' %}">Cancel</a>
                 </div>
 
 

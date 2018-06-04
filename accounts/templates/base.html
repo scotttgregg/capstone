@@ -19,21 +19,25 @@
         <nav class="site-nav">
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="">Fitness Library</a></li>
-                <li><a href="{% url 'blog_home' %}">Blog</a></li>
+                <li><a href={% url 'fit_lib' %}>Fitness Library</a></li>
+                <li><a href="">Shop Custom Programs</a></li>
                 <li><a href="">Cart</a></li>
                 <li><a href="">Checkout</a></li>
-                <li><a href="">Shop Custom Programs</a></li>
-                <li><a href="">Logout</a></li>
-                <li><a href="{% url 'profile' %}">Profile</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'blog_home' %}">Blog</a></li>
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <li><a href="{% url 'logout' %}?next=/">Logout</a></li>
+                    {% endif %}
             </ul>
         </nav>
         <nav class="perm-nav">
-        <ul>
-            <li><a class="action sign-up" href="{% url 'signup' %}">Sign up</a></li>
-            <li><a class="action log-in" href="{% url 'login' %}">Log In</a></li>
-        </ul>
-    </nav>
+            <ul>
+                {% if user.is_anonymous %}
+                    <li><a class="action sign-up" href="{% url 'signup' %}">Sign up</a></li>
+                    <li><a class="action log-in" href="{% url 'login' %}">Log In</a></li>
+                {% endif %}
+            </ul>
+        </nav>
         <div class="menu-toggle">
             <div class="hamburger"></div>
         </div>

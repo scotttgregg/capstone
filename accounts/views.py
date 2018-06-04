@@ -85,5 +85,12 @@ def profile_edit(request):
         user.email = request.POST.get('email')
         user.save()
 
-        return HttpResponseRedirect(reverse("profile", args=[request.user.username]))
+        return HttpResponseRedirect(reverse("profile"))
     return render(request, "accounts/profile_edit.html")
+
+
+# def logout(request):
+#     if request.method == 'POST':
+#         logout(request)
+#
+#         return redirect('home')

@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, p {
 /* ------------ NAVIGATION ------------- */
 .container {
   width: 95%;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto; }
 
 header {
