@@ -170,7 +170,7 @@ footer img {
   width: 85px;
   padding: 15px 5px; }
 
-/* ------------ Ribbons ------------- */
+/* ------------ HOME/Ribbons ------------- */
 section.ribbon {
   margin: -10px;
   background-color: rgba(169, 242, 0, 0.55);
@@ -209,7 +209,7 @@ section.ribbon img {
   margin-right: auto;
   margin-left: auto; }
 
-/* ------------ ABOUT ------------- */
+/* ------------ HOME/about ------------- */
 section.about {
   background: rgba(255, 255, 255, 0.75);
   margin: 10px 0;
@@ -226,7 +226,7 @@ section.about img {
   margin-right: auto;
   padding: 5%; }
 
-/* ------------ PRODUCTS ------------- */
+/* ------------ HOME/Products ------------- */
 #product-section {
   text-align: center;
   padding: 10%; }
@@ -254,7 +254,7 @@ section.about img {
   #product-section .btn {
     display: none; }
 
-/* ------------ Contact ------------- */
+/* ------------ HOME/Contact ------------- */
 section.contact h2 {
   font-size: 1.75em;
   font-weight: 900;
@@ -451,6 +451,12 @@ main.profile_page {
       background-color: grey;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px; }
+
+/* ------------ Store single view ------------- */
+main.store_single_view {
+  background-color: white; }
+  main.store_single_view img {
+    width: 300px; }
 
 /* ------------ Media queries ------------- */
 @media (min-width: 767px) {

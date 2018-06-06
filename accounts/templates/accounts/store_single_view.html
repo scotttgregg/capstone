@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 
+{% load accounts_tags %}
+
+
+
 {% block content %}
+    <main class="store_single_view">
+        {% store_image_or_default product %}
 
+        <h2 class="blog">{{ product.product_name }}</h2>
+        <p>{{ product.short_description }}</p>
+        <p>{{ product.price }}</p>
+        <button id="buy_now">Buy Now</button>
+        <p>--OR--</p>
+        <button class="add-to-cart" id="sing_view_cart">Add To Cart</button>
 
+        <section class="review description">
+            <p>{{ product.description }}</p>
+        </section>
 
-
-
-
+    </main>
 
 {% endblock %}

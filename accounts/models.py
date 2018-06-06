@@ -102,6 +102,8 @@ class ShopItem(models.Model):
     product_name = models.CharField(max_length=50)
     file = models.FileField(null=True)
     img = models.ImageField(upload_to=product_img_uh, null=True)
+    alt_text = models.CharField(max_length=50, null=True)
+    short_description = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=500)
     price = models.CharField(max_length=50, null=True)
 

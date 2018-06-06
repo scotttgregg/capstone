@@ -221,7 +221,7 @@ footer img {
 
 }
 
-/* ------------ Ribbons ------------- */
+/* ------------ HOME/Ribbons ------------- */
 
 section.ribbon {
   margin: -10px;
@@ -268,7 +268,7 @@ section.ribbon img {
   margin-left: auto;
 }
 
-/* ------------ ABOUT ------------- */
+/* ------------ HOME/about ------------- */
 
 section.about {
   background: $white;
@@ -290,7 +290,7 @@ section.about img {
   padding: 5%;
 }
 
-/* ------------ PRODUCTS ------------- */
+/* ------------ HOME/Products ------------- */
 
 #product-section {
   h2 {
@@ -327,7 +327,7 @@ section.about img {
   padding: 10%;
 }
 
-/* ------------ Contact ------------- */
+/* ------------ HOME/Contact ------------- */
 
 section.contact {
   h2 {
@@ -585,6 +585,20 @@ main.profile_page {
   }
   margin: -430px 2% 0 2%;
 }
+
+/* ------------ Store single view ------------- */
+
+main.store_single_view {
+  img {
+    width: 300px;
+  }
+  background-color: $background-color-white;
+}
+
+
+
+
+
 
 /* ------------ Media queries ------------- */
 

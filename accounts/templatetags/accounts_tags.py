@@ -15,3 +15,9 @@ def profile_image_or_default(user):
         print(user.profile_img.url)
         return mark_safe('<img class="profile_pic" src="{}" alt="{}">'.format(user.profile_img.url, user.username))
     return mark_safe('<img class="default_profile" src={} alt="Placeholder Image">'.format('/static/accounts/img/profile_default.png'))
+
+
+@register.simple_tag
+def store_image_or_default(product):
+    print(product.img.url)
+    return mark_safe('<img class="" src="{}" alt="{}">'.format(product.img.url, product.alt_text))

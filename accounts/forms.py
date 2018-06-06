@@ -18,4 +18,4 @@ class SignUpForm(UserCreationForm):
 class ShopItemForm(forms.ModelForm):
     class Meta:
         model = ShopItem
-        fields = ['product_name', 'file', 'img', 'description',]
+        fields = ['product_name', 'file', 'img', 'alt_text', 'short_description', 'description', 'price']

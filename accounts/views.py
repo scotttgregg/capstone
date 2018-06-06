@@ -91,7 +91,7 @@ def profile_edit(request):
 
 
 def store(request):
-    product_list = ShopItem.objects.filter
+    product_list = ShopItem.objects.all()
     return render(request, "accounts/store.html", {'products': product_list})
 
 

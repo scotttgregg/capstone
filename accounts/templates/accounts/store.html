@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 
+{% load accounts_tags %}
+
+
+
 {% block content %}
-
-
-
-
-
-
+    <main class="store">
+        <h1>Custom Fitness Programs</h1>
+        <section class="product_list">
+            {% for product in products %}
+                <div class="card">
+                    {% store_image_or_default product %}
+                    <h3>{{ product.product_name }}</h3>
+                    <p>{{ product.short_description }}</p>
+                    <a href="{% url 'store_single_view' product.slug %}" class="button">Read More</a>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
 
 {% endblock %}
