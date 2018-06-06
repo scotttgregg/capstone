@@ -19,21 +19,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from accounts import views
-from oscar.app import application
-
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('hgg', views.home, name='home'),
-    path('accounts/', include('accounts.urls')),
-    path('i18n/', include('django.conf.urls.i18n')),
-    path('cart/', application.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  path('admin/', admin.site.urls),
+                  path('', views.home, name='home'),
+                  path('accounts/', include('accounts.urls')),
+                  path('store/', include('accounts.urls_store')),
 
-
-
-
-
-
-
-
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

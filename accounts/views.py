@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse, render, redirect
-from accounts.models import Blog, Category
-from accounts.forms import BlogModelForm, SignUpForm
+from accounts.models import Blog, Category, ShopItem
+from accounts.forms import BlogModelForm, SignUpForm, ShopItemForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as loginf, authenticate
 
 
 def home(request):
+    print('dfghj')
     return render(request, "accounts/home.html")
 
 
@@ -15,7 +16,6 @@ def blog_single_view(request, cat, slug):
     return render(request, 'accounts/blog_single_view.html', {'blog': blog, 'cat': cat})
 
 
-@login_required
 def blog(request):
     blog_list = Blog.objects.filter(fitness_library=False)
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
@@ -31,7 +31,7 @@ def blog_create(request):
         blog = form.save(commit=False)
         blog.author = request.user
         blog.save()
-        return HttpResponseRedirect('/accounts/blog/blog_create')
+        return HttpResponseRedirect(reverse('blog_single_view', kwargs={'cat': blog.category.slug, 'slug': blog.slug}))
 
     return render(request, 'accounts/blog_create.html', {
         # 'tag': Tag.objects.all()
@@ -40,6 +40,7 @@ def blog_create(request):
     })
 
 
+@login_required
 def fitness_library(request):
     blog_list = Blog.objects.filter(fitness_library=True)
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
@@ -89,8 +90,26 @@ def profile_edit(request):
     return render(request, "accounts/profile_edit.html")
 
 
-# def logout(request):
-#     if request.method == 'POST':
-#         logout(request)
-#
-#         return redirect('home')
+def store(request):
+    product_list = ShopItem.objects.filter
+    return render(request, "accounts/store.html", {'products': product_list})
+
+
+def store_single_view(request, slug):
+    product = get_object_or_404(ShopItem, slug=slug)
+    return render(request, "accounts/store_single_view.html", {'product': product})
+
+
+def store_create(request):
+    form = ShopItemForm()
+    if request.method == 'POST':
+        form = ShopItemForm(request.POST, request.FILES)
+
+        print(request.POST)
+        product = form.save(commit=False)
+        product.save()
+        return HttpResponseRedirect(reverse('store_single_view', kwargs={'slug': product.slug}))
+
+    return render(request, 'accounts/store_create.html', {
+        'form': form
+    })

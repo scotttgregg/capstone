@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="row">
+        <section class="create">
+            <form class="blog_create" action="{% url 'store_create' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="button" type="submit" value="Submit" id="sub-btn">
+            </form>
+
+        </section>
+    </div>
+
+{% endblock %}
+
+

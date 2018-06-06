@@ -171,6 +171,7 @@ span.rob {
   position: absolute;
   overflow: hidden;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .action {
@@ -608,7 +609,7 @@ main.profile_page {
 
 /* ------------ MIN-WIDTH 769 ------------- */
 
-@media (min-width: 800px) {
+@media (min-width: 814px) {
 
   /* ------------ NAVIGATION ------------- */
 

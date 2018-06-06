@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm
-from accounts.models import User, Blog, Category
+from accounts.models import User, Blog, Category, ShopItem
 
 class MyUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
@@ -19,3 +19,4 @@ class MyUserAdmin(UserAdmin):
 admin.site.register(User, MyUserAdmin)
 admin.site.register(Blog)
 admin.site.register(Category)
+admin.site.register(ShopItem)

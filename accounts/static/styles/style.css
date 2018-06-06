@@ -129,7 +129,8 @@ span.rob {
   left: 0;
   position: absolute;
   overflow: hidden;
-  width: 100%; }
+  width: 100%;
+  text-transform: uppercase; }
 
 .action {
   text-decoration: none;
@@ -462,7 +463,7 @@ main.profile_page {
     width: 40%;
     float: right; } }
 /* ------------ MIN-WIDTH 769 ------------- */
-@media (min-width: 800px) {
+@media (min-width: 814px) {
   /* ------------ NAVIGATION ------------- */
   .menu-toggle {
     display: none; }

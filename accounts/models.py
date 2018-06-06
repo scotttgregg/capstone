@@ -90,3 +90,37 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+
+
+
+def product_img_uh(instance, filename):
+    return 'products/{}/{}'.format(instance.product_name, filename)
+
+
+class ShopItem(models.Model):
+    slug = models.SlugField(blank=True, null=True, unique=True)
+    product_name = models.CharField(max_length=50)
+    file = models.FileField(null=True)
+    img = models.ImageField(upload_to=product_img_uh, null=True)
+    description = models.CharField(max_length=500)
+    price = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return self.product_name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            number = 0
+            slug_title = slugify(self.product_name)
+            checking = True
+            while checking:
+                results = ShopItem.objects.filter(slug=slug_title)
+                if results.exists():
+                    slug_title = slugify(self.product_name) + '_' + str(number + 1)
+                    number += 1
+                else:
+                    checking = False
+                self.slug = slug_title
+        super().save(args, kwargs)
+
+
