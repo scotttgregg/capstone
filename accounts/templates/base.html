@@ -13,21 +13,21 @@
 <header>
     <div class="container">
         <div class="logo">
-            <h1 class="logo">Primal Prowess <span class="rob">| Rob Bozada</span></h1>
+            <h1 class="logo"><a href="{% url 'home' %}">Primal Prowess<span class="rob">| Rob Bozada</span></a></h1>
             <h2 class="logo">Online Personal Fitness Training</h2>
         </div>
         <nav class="site-nav">
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href={% url 'fit_lib' %}>Fitness Library</a></li>
+                <li><a href="{% url 'blog_home' %}">Blog</a></li>
                 <li><a href="{% url 'store' %}">Shop Custom Programs</a></li>
                 <li><a href="">Cart</a></li>
                 <li><a href="">Checkout</a></li>
-                    {% if user.is_authenticated %}
-                        <li><a href="{% url 'blog_home' %}">Blog</a></li>
-                        <li><a href="{% url 'profile' %}">Profile</a></li>
-                        <li><a href="{% url 'logout' %}?next=/">Logout</a></li>
-                    {% endif %}
+                {% if user.is_authenticated %}
+                    <li><a href={% url 'fit_lib' %}>Fitness Library</a></li>
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}?next=/">Logout</a></li>
+                {% endif %}
             </ul>
         </nav>
         <nav class="perm-nav">
@@ -47,12 +47,33 @@
 {% block content %}
 {% endblock %}
 <footer>
-    <div class="social-icons">
-        <a><img src="{% static 'accounts/img/Facebook.svg' %}" id="instagram" class="social-media"></a>
-        <a><img src="{% static 'accounts/img/Instagram.svg' %}" id="facebook" class="social-media"></a>
-    </div>
-    <p>© Primal Prowess | Rob Bozada | Portland, OR</p>
-    <p>Website by Scott Schultz Design</p>
+    <section class="top">
+        <div class="social-icons">
+            <a><img src="{% static 'accounts/img/Facebook.svg' %}" id="instagram" class="social-media"></a>
+            <a><img src="{% static 'accounts/img/Instagram.svg' %}" id="facebook" class="social-media"></a>
+        </div>
+        <div class="pages">
+            <h2>Pages</h2>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'blog_home' %}">Blog</a></li>
+                <li><a href="{% url 'store' %}">Shop Custom Programs</a></li>
+                <li><a href="">Cart</a></li>
+                <li><a href="">Checkout</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'blog_home' %}">Blog</a></li>
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li class="logout"><a href="{% url 'logout' %}?next=/">Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </section>
+    <section class="site_by copyright">
+        <div class="footer_p">
+            <p>© Primal Prowess | Rob Bozada | Portland, OR</p>
+            <p>Website by Scott Schultz Design</p>
+        </div>
+    </section>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

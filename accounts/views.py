@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse, render, redirect
+from django.shortcuts import get_object_or_404, HttpResponseRedirect, reverse, render, redirect
 from accounts.models import Blog, Category, ShopItem
 from accounts.forms import BlogModelForm, SignUpForm, ShopItemForm
 from django.contrib.auth.decorators import login_required

@@ -3,17 +3,17 @@
 
 {% block content %}
     <main class="profile_page">
+        <section class="profile_pic">
+            {% profile_image_or_default user %}
+        </section>
         <div class="profile_page">
-            <section class="profile_pic">
-                {% profile_image_or_default user %}
-            </section>
-            <p>Username: {{ user.username }} </p>
-            <p>Height: {{ user.height }}</p>
-            <p>Weight: {{ user.weight }}</p>
-            <p>Bio: {{ user.bio }}</p>
-            <p>Fitness Goals: {{ user.goals }}</p>
-            <p>Email: {{ user.email }}</p>
-            <a class="edit_profile" href="{% url 'profile_edit' %}">Edit Profile</a>
+            <p class="profile">Username: <span>{{ user.username }}</span> </p>
+            <p class="profile">Height: {{ user.height }}</p>
+            <p class="profile">Weight: {{ user.weight }}</p>
+            <p class="profile">Bio: {{ user.bio }}</p>
+            <p class="profile">Fitness Goals: {{ user.goals }}</p>
+            <p class="profile">Email: {{ user.email }}</p>
+            <p class="profile"><a class="edit_profile" href="{% url 'profile_edit' %}">Edit Profile</a></p>
         </div>
     </main>
 

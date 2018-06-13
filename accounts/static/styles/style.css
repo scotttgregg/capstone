@@ -10,9 +10,6 @@ body {
 main {
   margin: 0; }
 
-h1, h2, h3, h4, h5, p {
-  margin: 5%; }
-
 /* ------------ NAVIGATION ------------- */
 .container {
   width: 95%;
@@ -35,6 +32,9 @@ header::after {
   font-size: 1.5em;
   margin: 0;
   font-weight: 700; }
+  .logo h1 a {
+    text-decoration: none;
+    color: #a9f200; }
 
 h2.logo {
   font-weight: 100;
@@ -66,7 +66,7 @@ span.rob {
   list-style: none; }
 
 .site-nav li {
-  border-bottom: 1px solid #404040; }
+  border-bottom: 1px solid #a9f200; }
 
 .site-nav li:last-child {
   border-bottom: none; }
@@ -156,15 +156,32 @@ nav .log-in {
 
 /* ------------ Footer ------------- */
 footer {
-  background-color: white;
   text-align: center;
-  margin: 400px 0 0 0;
-  padding: 23px 5px;
+  margin: 150px 0 0 0;
   line-height: 21px; }
-
-footer p {
-  font-size: 1em;
-  margin: 1%; }
+  footer section.top {
+    background-color: rgba(0, 0, 0, 0.5); }
+    footer section.top div {
+      padding: 5px 0 15px 0; }
+    footer section.top h2 {
+      margin: 0;
+      color: #a9f200;
+      font-size: 1.5em;
+      text-decoration: underline;
+      padding: 1px 0 15px 0; }
+    footer section.top li {
+      padding: 2px 0 2px 0; }
+    footer section.top a {
+      text-decoration: none;
+      color: white; }
+  footer p {
+    margin: 0;
+    padding: 2px 0 0 0; }
+  footer section.site_by {
+    background-color: white;
+    height: 100px; }
+    footer section.site_by div {
+      padding-top: 30px; }
 
 footer img {
   width: 85px;
@@ -172,48 +189,46 @@ footer img {
 
 /* ------------ HOME/Ribbons ------------- */
 section.ribbon {
-  margin: -10px;
   background-color: rgba(169, 242, 0, 0.55);
   padding: 3em 2em; }
-
-section.ribbon h2 {
-  margin: 0;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
-  line-height: 1.5em; }
-
-section.ribbon a {
-  padding: 5px 7px;
-  background-color: #404040;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px; }
-
-section.ribbon a:hover {
-  background-color: black; }
+  section.ribbon h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5em; }
+  section.ribbon a {
+    padding: 5px 7px;
+    background-color: #404040;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; }
+    section.ribbon a:hover {
+      background-color: black; }
+  section.ribbon img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto; }
+  section.ribbon p {
+    margin: 20px -20px 15px -20px;
+    text-indent: 1em; }
 
 div.button {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  text-align: center;
-  margin-top: 2em;
-  padding: 20px 0; }
+  text-align: center; }
 
 div.book-button {
   text-align: right; }
 
-section.ribbon img {
-  width: 40%;
-  height: auto;
-  display: block;
-  margin-right: auto;
-  margin-left: auto; }
-
 /* ------------ HOME/about ------------- */
 section.about {
   background: rgba(255, 255, 255, 0.75);
-  margin: 10px 0;
   padding: 5% 0; }
+  section.about div.about-text {
+    padding: 20px 0 0 0; }
 
 .about h2 {
   font-size: 1.25em;
@@ -221,15 +236,20 @@ section.about {
   text-align: center; }
 
 section.about img {
+  display: flex;
+  align-items: center;
   width: 90%;
   margin-left: auto;
-  margin-right: auto;
-  padding: 5%; }
+  margin-right: auto; }
+
+p.philosophy {
+  padding: 10px;
+  line-height: 1.5em; }
 
 /* ------------ HOME/Products ------------- */
 #product-section {
   text-align: center;
-  padding: 10%; }
+  padding: 5% 0 5% 0; }
   #product-section h2 {
     font-size: 1.5em;
     font-weight: 900;
@@ -250,29 +270,48 @@ section.about img {
   #product-section h4:hover {
     background-color: black; }
   #product-section li {
-    padding-top: 8%; }
+    padding: 3% 1% 0 1%; }
   #product-section .btn {
     display: none; }
+  #product-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
 
 /* ------------ HOME/Contact ------------- */
-section.contact h2 {
-  font-size: 1.75em;
-  font-weight: 900;
-  color: white;
-  text-align: center;
-  padding: 0 10%; }
-section.contact h3 {
-  font-size: 1em;
-  font-weight: 200;
-  color: white;
-  text-align: center;
-  padding: 0 10%;
-  line-height: 1.5em; }
+section.contact {
+  background-color: white; }
+  section.contact h2 {
+    margin: 0;
+    padding: 20px 0 0 0;
+    font-size: 1.75em;
+    font-weight: 900;
+    text-align: center; }
+    section.contact h2.certs {
+      margin: 0 0 89px 0; }
+  section.contact h3 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 200;
+    padding: 0 49px;
+    text-align: center;
+    line-height: 1.5em; }
+  section.contact div.contact {
+    width: 100%; }
+  section.contact div.button {
+    padding-top: 40px; }
 
 form#contact-form {
   margin: 3%;
+  padding: 0 0 20px 0;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px; }
+
+img.cert_logos {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95%; }
 
 label {
   margin: 2% 4%;
@@ -386,7 +425,8 @@ main.login {
   main.login h1 {
     font-size: 3em;
     color: white;
-    text-align: center; }
+    text-align: center;
+    padding: 0 0 30px 0; }
   main.login div.login {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 5px;
@@ -426,7 +466,8 @@ main.sign_up {
   main.sign_up h1 {
     font-size: 3em;
     color: white;
-    text-align: center; }
+    text-align: center;
+    padding: 0 0 30px 0; }
   main.sign_up div {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 5px; }
@@ -441,16 +482,30 @@ main.profile_page {
   main.profile_page div {
     padding: 0 0 30px 0;
     background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 5px; }
-    main.profile_page div img.profile_pic {
-      max-width: 300px;
-      border-radius: 50%;
-      padding: 30px; }
-    main.profile_page div section {
-      width: 360px;
-      background-color: grey;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px; }
+    border-bottom-left-radiusradius: 5px;
+    border-bottom-right-image: 5px; }
+    main.profile_page div.profile_page {
+      margin: 0 auto 0 auto;
+      padding: 45px 30px;
+      max-width: 1024px; }
+    main.profile_page div p.profile {
+      padding: 3% 0; }
+      main.profile_page div p.profile span {
+        font-size: 1.5em;
+        color: #3581B8; }
+  main.profile_page section {
+    background-color: #3581B8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    max-width: 1024px;
+    padding: 0 30px;
+    margin: 0 auto 0 auto; }
+  main.profile_page img.profile_pic {
+    max-width: 300px;
+    border-radius: 50%;
+    padding: 30px;
+    display: block;
+    margin: 0 auto; }
 
 /* ------------ Store single view ------------- */
 main.store_single_view {
@@ -459,16 +514,52 @@ main.store_single_view {
     width: 300px; }
 
 /* ------------ Media queries ------------- */
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   form input#sub-btn {
     margin: 3% 41%; }
   form.blog_create {
     padding: 1% 0 22% 0; }
 
-  section.about img {
-    width: 40%;
-    float: right; } }
-/* ------------ MIN-WIDTH 769 ------------- */
+  section.ribbon {
+    display: grid;
+    grid-template-columns: 40% 60%; }
+  section.about {
+    display: grid;
+    grid-template-columns: 50% 50%; }
+    section.about div.about-text {
+      grid-column-start: 1;
+      grid-row-start: 1; }
+      section.about div.about-text h2 {
+        padding-bottom: 10px; }
+      section.about div.about-text p.philosophy {
+        line-height: 1.25em;
+        text-indent: 1em; }
+  section p.book {
+    display: flex;
+    align-items: center;
+    line-height: 1.5em;
+    text-indent: 1em; }
+  section div.button {
+    grid-column-start: 2;
+    align-content: center;
+    align-items: center; }
+  section.contact {
+    display: grid;
+    grid-template-columns: 50% 50%; }
+
+  footer section.top {
+    display: grid;
+    grid-template-columns: 50% 50%; }
+    footer section.top div.social-icons {
+      padding-right: 6%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+    footer section.top div.pages {
+      padding: 20px 0 20px 6%; }
+  footer h2, footer ul {
+    text-align: left; } }
+/* ------------ MIN-WIDTH 814 ------------- */
 @media (min-width: 814px) {
   /* ------------ NAVIGATION ------------- */
   .menu-toggle {
@@ -476,18 +567,18 @@ main.store_single_view {
 
   .site-nav {
     height: auto;
-    position: relative;
     background: transparent;
-    float: right;
-    clip-path: initial; }
+    clip-path: initial;
+    margin: -34px 0 0 0; }
+    .site-nav ul {
+      display: flex; }
 
   .site-nav li {
-    display: inline-block;
-    border: none; }
+    border-bottom: none;
+    padding: 10px; }
 
   .site-nav a {
-    padding: 0;
-    margin-left: 3em; }
+    padding: 0; }
 
   .site-nav a:hover,
   .site-nav a:focus {
@@ -496,7 +587,38 @@ main.store_single_view {
   .site-nav--icon {
     display: none; } }
 @media (min-width: 1023px) {
+  .site-nav {
+    margin: 0; }
+
   section.create {
-    margin-top: -40%; } }
+    margin-top: -40%; }
+
+  header {
+    padding: 16px 0 3.75em 10px; }
+    header div.container {
+      margin: 0; }
+    header nav.perm-nav {
+      bottom: 47%;
+      width: 24%;
+      left: 75%; }
+    header nav.site-nav {
+      position: absolute;
+      top: 67%;
+      right: 29px; }
+    header a.action {
+      border-radius: 5px;
+      width: 49%; }
+      header a.action.log-in {
+        margin-left: 3px; }
+
+  p.philosophy {
+    line-height: 1.5em;
+    padding-top: 50px; } }
+@media (min-width: 1439px) {
+  form textarea {
+    height: 140px; }
+
+  div.about-img img {
+    width: 40%; } }
 
 /*# sourceMappingURL=style.css.map */
