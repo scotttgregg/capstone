@@ -336,57 +336,72 @@ button {
     margin-left: 35%; }
 
 /* ------------ blog ------------- */
-main.container {
+main.blog {
   background: rgba(255, 255, 255, 0.75);
   margin: 10px 10px;
-  padding: 5% 0; }
-  main.container h2 {
+  padding: 20px 20px; }
+  main.blog h2 {
+    padding: 20px 20px;
     font-size: 2em;
     color: black;
     font-weight: 800; }
-  main.container h5 {
-    font-size: 1.25em; }
-  main.container a.author {
+    main.blog h2.blog-title {
+      padding: 20px 0; }
+  main.blog h5 {
+    font-size: 1.25em;
+    padding: 20px 20px; }
+  main.blog a.author {
     text-decoration: none;
     color: #3581B8; }
-    main.container a.author:hover {
+    main.blog a.author:hover {
       color: black; }
-  main.container p.post-time {
+  main.blog p.post-time {
     font-size: .75em; }
-  main.container.single_view {
+  main.blog p.blog-text {
+    padding: 0 0 20px 0; }
+  main.blog.single_view {
     padding: 0 0 5% 0; }
+    main.blog.single_view p {
+      padding: 10px 20px; }
+    main.blog.single_view iframe {
+      max-width: 100%;
+      display: block;
+      margin: 10px auto; }
 
 a.read-more {
   width: 100%;
   text-align: center;
-  margin: 0 0 0 20px;
   padding: 5px 20px;
   background-color: #404040;
   color: white;
   text-decoration: none;
   border-radius: 5px; }
   a.read-more:hover {
-    background-color: rgba(169, 242, 0, 0.55);
+    background-color: #a9f200;
     color: black; }
 
 .card-footer {
-  margin: 2em;
+  margin: 20px 0 0 0;
   font-size: .75em; }
 
 button.button {
-  margin-left: 35%; }
+  display: block;
+  margin: 0 auto; }
 
 /* ------------ blog ADMIN ------------- */
 section.create {
-  margin-top: -58%; }
+  margin-top: -400px; }
 
 form.blog_create {
-  margin: 3%;
-  padding: 5% 0 35% 0;
+  margin: 1%;
+  padding: 5% 0 165px 0;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px; }
 form p {
   margin: 0; }
+  form p.cancel {
+    display: block;
+    text-align: center; }
 form select {
   margin: 3% 5% 4% 5%; }
 form input#sub-btn {
@@ -399,9 +414,16 @@ form input#sub-btn {
   padding: 10px 30px;
   margin: 4% 31%;
   border: none; }
-  form input#sub-btn:hover {
-    background-color: rgba(169, 242, 0, 0.55);
-    color: black; }
+  form input#sub-btn .button {
+    margin: 30px auto 30px auto;
+    display: block; }
+form input:hover {
+  color: black; }
+form input.btn {
+  width: 25%;
+  display: block;
+  margin: 11px auto;
+  float: none; }
 form input, form select, form textarea {
   width: 90%;
   padding: 12px 20px;
@@ -414,9 +436,14 @@ form input, form select, form textarea {
   float: left; }
 form textarea {
   height: 100px; }
+  form textarea.edit_profile {
+    height: 30px; }
 
 img.post_img {
-  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
+  max-width: 50%;
   height: auto; }
 
 /* ------------ Log In ------------- */
@@ -468,6 +495,10 @@ main.sign_up {
     color: white;
     text-align: center;
     padding: 0 0 30px 0; }
+  main.sign_up h2 {
+    padding: 0 0 20px 0;
+    color: white;
+    text-align: center; }
   main.sign_up div {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 5px; }
@@ -478,7 +509,8 @@ main.sign_up {
 
 /* ------------ Profile Page ------------- */
 main.profile_page {
-  margin: -430px 2% 0 2%; }
+  max-width: 1024px;
+  margin: -430px auto 0 auto; }
   main.profile_page div {
     padding: 0 0 30px 0;
     background-color: rgba(255, 255, 255, 0.75);
@@ -501,24 +533,127 @@ main.profile_page {
     padding: 0 30px;
     margin: 0 auto 0 auto; }
   main.profile_page img.profile_pic {
-    max-width: 300px;
+    max-width: 235px;
     border-radius: 50%;
     padding: 30px;
     display: block;
     margin: 0 auto; }
+  main.profile_page li {
+    margin: 20px 0 20px 0; }
+    main.profile_page li a {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      display: inline; }
+      main.profile_page li a:hover {
+        background-color: #a9f200;
+        color: black; }
+
+/* ------------ Profile Edit ------------- */
+main.profile_edit div.profile_edit {
+  margin: -400px 2% 0 2%;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 30px 0 30px 0; }
+main.profile_edit ul {
+  padding: 0 10px 25px 10px; }
+
+/* ------------ Store  ------------- */
+main.store {
+  margin-top: -400px; }
+  main.store ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+  main.store li {
+    padding: 50px 0 0 0; }
+  main.store h1 {
+    font-size: 2em;
+    color: white;
+    text-align: center; }
+  main.store h3 {
+    text-align: center;
+    padding: 13px 0 5px 0; }
+  main.store p {
+    font-size: .75em;
+    text-align: center;
+    padding: 10px 10px 0 10px; }
+  main.store div.card {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 450px;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 0 0 10px 0; }
+    main.store div.card a {
+      background-color: #404040;
+      color: white;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 5px 10px;
+      text-decoration: none; }
+      main.store div.card a:hover {
+        background-color: rgba(169, 242, 0, 0.55);
+        color: black; }
+    main.store div.card div.button {
+      display: flex;
+      padding: 30px 0 5px 0; }
+    main.store div.card hr {
+      width: 40px; }
+  main.store img {
+    width: 300px;
+    height: 300px; }
 
 /* ------------ Store single view ------------- */
 main.store_single_view {
-  background-color: white; }
+  background-color: white;
+  margin-top: -400px; }
   main.store_single_view img {
-    width: 300px; }
+    display: block;
+    width: 95%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 0 20px 0; }
+  main.store_single_view h2 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 5px 0 15px 10px; }
+  main.store_single_view h3 {
+    padding: 10px 0 0 10px; }
+  main.store_single_view p {
+    font-size: .75em;
+    padding: 0 10px 20px 10px; }
+  main.store_single_view a {
+    background-color: #404040;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5px 10px;
+    text-decoration: none; }
+    main.store_single_view a:hover {
+      background-color: rgba(169, 242, 0, 0.55);
+      color: black; }
+  main.store_single_view hr {
+    width: 95%; }
+  main.store_single_view button {
+    margin: 10px 0 10px 10px;
+    background-color: #42007f;
+    padding: 10px 90px;
+    font-size: 1em;
+    box-shadow: none; }
+    main.store_single_view button:hover {
+      background-color: #aa4cff;
+      color: white; }
 
 /* ------------ Media queries ------------- */
 @media (min-width: 768px) {
   form input#sub-btn {
     margin: 3% 41%; }
   form.blog_create {
-    padding: 1% 0 22% 0; }
+    padding: 1% 0 260px 0; }
 
   section.ribbon {
     display: grid;
@@ -558,7 +693,12 @@ main.store_single_view {
     footer section.top div.pages {
       padding: 20px 0 20px 6%; }
   footer h2, footer ul {
-    text-align: left; } }
+    text-align: left; }
+
+  main.store_single_view {
+    padding: 10px; }
+    main.store_single_view img {
+      width: 80%; } }
 /* ------------ MIN-WIDTH 814 ------------- */
 @media (min-width: 814px) {
   /* ------------ NAVIGATION ------------- */
@@ -569,7 +709,7 @@ main.store_single_view {
     height: auto;
     background: transparent;
     clip-path: initial;
-    margin: -34px 0 0 0; }
+    margin: -100px 20px 0 0; }
     .site-nav ul {
       display: flex; }
 
@@ -585,25 +725,31 @@ main.store_single_view {
     background: transparent; }
 
   .site-nav--icon {
-    display: none; } }
+    display: none; }
+
+  main.store_single_view {
+    display: grid;
+    grid-template-columns: 50% 50%; }
+  main div.product_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; } }
+/* ------------ MIN-WIDTH 1023 ------------- */
 @media (min-width: 1023px) {
   .site-nav {
     margin: 0; }
-
-  section.create {
-    margin-top: -40%; }
 
   header {
     padding: 16px 0 3.75em 10px; }
     header div.container {
       margin: 0; }
     header nav.perm-nav {
-      bottom: 47%;
+      bottom: 4%;
       width: 24%;
-      left: 75%; }
+      left: 73%; }
     header nav.site-nav {
       position: absolute;
-      top: 67%;
+      top: 13%;
       right: 29px; }
     header a.action {
       border-radius: 5px;

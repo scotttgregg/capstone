@@ -4,36 +4,38 @@
 {% block content %}
 
     <main class="profile_edit">
+{#        <h1>Profile Edit</h1>#}
+
         <div class="profile_edit">
-{#            <section class="profile_pic">#}
-{#                {% profile_image_or_default user %}#}
-{#                <h4>Change profile picture...</h4>#}
-{#                <input name="profile_img" type="file" class="change_pic" form="edit_profile_form">#}
-{#            </section>#}
+            {#            <section class="profile_pic">#}
+            {#                {% profile_image_or_default user %}#}
+            {#                <h4>Change profile picture...</h4>#}
+            {#                <input name="profile_img" type="file" class="change_pic" form="edit_profile_form">#}
+            {#            </section>#}
             <form id="edit_profile_form" role="form" enctype="multipart/form-data" method="post">
                 {% csrf_token %}
 
-                <label class="h_and_w">Height</label>
-                <textarea name="height" id="height" form="edit_profile_form">{{ user.height }}</textarea>
+                <label class="h_and_w edit_profile">Height:</label>
+                <textarea class="edit_profile" name="height" id="height" form="edit_profile_form">{{ user.height }}</textarea>
 
-                <label class="h_and_w">Weight</label>
-                <textarea name="weight" id="weight" form="edit_profile_form">{{ user.weight }}</textarea>
+                <label class="h_and_w edit_profile">Weight:</label>
+                <textarea class="edit_profile" name="weight" id="weight" form="edit_profile_form">{{ user.weight }}</textarea>
 
-                <label class="bio">Bio:</label>
-                <textarea name="bio" id="bio" form="edit_profile_form">{{ user.bio }}</textarea>
+                <label class="bio edit_profile">Bio:</label>
+                <textarea class="edit_profile" name="bio" id="bio" form="edit_profile_form">{{ user.bio }}</textarea>
 
-                <label class="h_and_w">Fitness Goals:</label>
-                <textarea name="goals" id="goals" form="edit_profile_form">{{ user.goals }}</textarea>
+                <label class="h_and_w edit_profile">Fitness Goals:</label>
+                <textarea class="edit_profile" name="goals" id="goals" form="edit_profile_form">{{ user.goals }}</textarea>
 
-                <label class="email">Email:</label>
-                <textarea name="email" id="email" form="edit_profile_form">{{ user.email }}</textarea>
+                <label class="email edit_profile">Email:</label>
+                <textarea class="edit_profile" name="email" id="email" form="edit_profile_form">{{ user.email }}</textarea>
 
-                <div class="">
+                <div class="buttons save reset">
                     <input class="btn btn-primary" value="Save Changes" type="submit">
                     <span></span>
                     <input class="btn btn-default" value="Reset" type="reset">
                     <span></span>
-                    <a class="cancel" href="{% url 'profile' %}">Cancel</a>
+                    <p class="cancel"><a class="cancel" href="{% url 'profile' %}">Cancel</a></p>
                 </div>
 
 

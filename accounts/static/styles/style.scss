@@ -452,17 +452,22 @@ button {
 
 /* ------------ blog ------------- */
 
-main.container {
+main.blog {
   background: $white;
   margin: 10px 10px;
-  padding: 5% 0;
+  padding: 20px 20px;
   h2 {
+    padding: 20px 20px;
     font-size: 2em;
     color: $black;
     font-weight: 800;
+    &.blog-title {
+      padding: 20px 0;
+    }
   }
   h5 {
     font-size: 1.25em;
+    padding: 20px 20px;
   }
   a.author {
     text-decoration: none;
@@ -471,70 +476,103 @@ main.container {
       color: $black;
     }
   }
-  p.post-time {
-    font-size: .75em;
+  p {
+    &.post-time {
+      font-size: .75em;
+    }
+    &.blog-text {
+      padding: 0 0 20px 0;
+    }
   }
   &.single_view {
     padding: 0 0 5% 0;
+    p {
+      padding: 10px 20px;
+    }
+    iframe {
+      max-width: 100%;
+      display: block;
+      margin: 10px auto;
+    }
   }
 }
 
 a.read-more {
   width: 100%;
   text-align: center;
-  margin: 0 0 0 20px;
+  //margin: 0 0 0 20px;
   padding: 5px 20px;
   background-color: $button-color-grey;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   &:hover {
-    background-color: $ribbon-color-green;
+    background-color: $theme-color-green;
     color: $black;
   }
 }
 
 .card-footer {
-  margin: 2em;
+  margin: 20px 0 0 0;
   font-size: .75em;
 }
 
 button.button {
-  margin-left: 35%;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ------------ blog ADMIN ------------- */
 
 section.create {
-  margin-top: -58%
+  margin-top: -400px;
 }
 
 form {
   &.blog_create {
-    margin: 3%;
-    padding: 5% 0 35% 0;
+    margin: 1%;
+    padding: 5% 0 165px 0;
     background-color: $white;
     border-radius: 10px;
   }
   p {
     margin: 0;
+    &.cancel {
+      display: block;
+      text-align: center;
+    }
   }
   select {
     margin: 3% 5% 4% 5%;
   }
-  input#sub-btn {
-    width: auto;
-    background-color: $button-color-grey;
-    color: $background-color-white;
-    border-radius: 5px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    font-size: 20px;
-    padding: 10px 30px;
-    margin: 4% 31%;
-    border: none;
+  input {
+    &#sub-btn {
+      width: auto;
+      background-color: $button-color-grey;
+      color: $background-color-white;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-size: 20px;
+      padding: 10px 30px;
+      margin: 4% 31%;
+      border: none;
+      .button {
+        margin: 30px auto 30px auto;
+        display: block;
+      }
+    }
     &:hover {
-      background-color: $ribbon-color-green;
+      //background-color: $ribbon-color-green;
       color: $black;
+    }
+    &.btn {
+      width: 25%;
+      display: block;
+      margin: 11px auto;
+      float: none;
+    }
+    &.buttons {
+
     }
   }
   input, select, textarea {
@@ -550,12 +588,18 @@ form {
   }
   textarea {
     height: 100px;
+    &.edit_profile { // edit_profile form
+      height: 30px;
+    }
   }
 }
 
 img {
   &.post_img {
-    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+    max-width: 50%;
     height: auto;
   }
 }
@@ -620,6 +664,11 @@ main.sign_up {
     text-align: center;
     padding: 0 0 30px 0;
   }
+  h2 {
+    padding: 0 0 20px 0;
+    color: $background-color-white;
+    text-align: center;
+  }
   div {
     background-color: $white;
     border-radius: 5px;
@@ -665,22 +714,162 @@ main.profile_page {
     margin: 0 auto 0 auto;
   }
   img.profile_pic {
-    max-width: 300px;
+    max-width: 235px;
     border-radius: 50%;
     padding: 30px;
     display: block;
     margin: 0 auto
   }
-  margin: -430px 2% 0 2%;
+  max-width: 1024px;
+  margin: -430px auto 0 auto;
+  li {
+    a {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      display: inline;
+      &:hover {
+        background-color: $theme-color-green;
+        color: $black;
+      }
+    }
+    margin: 20px 0 20px 0;
+
+  }
+}
+
+/* ------------ Profile Edit ------------- */
+
+main.profile_edit {
+
+  div {
+    &.profile_edit {
+      margin: -400px 2% 0 2%;
+      background-color: $white;
+      padding: 30px 0 30px 0;
+    }
+  }
+  ul {
+    padding: 0 10px 25px 10px;
+  }
+}
+
+/* ------------ Store  ------------- */
+
+main {
+  &.store {
+    margin-top: -400px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    li {
+      padding: 50px 0 0 0;
+    }
+    h1 {
+      font-size: 2em;
+      color: white;
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+      padding: 13px 0 5px 0;
+    }
+    p {
+      font-size: .75em;
+      text-align: center;
+      padding: 10px 10px 0 10px;
+    }
+    div.card {
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 300px;
+      height: 450px;
+      background-color: $white;
+      padding: 0 0 10px 0;
+      a {
+        background-color: $button-color-grey;
+        color: $background-color-white;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 5px 10px;
+        text-decoration: none;
+        &:hover {
+          background-color: $ribbon-color-green;
+          color: $black;
+        }
+      }
+      div.button {
+        display: flex;
+        padding: 30px 0 5px 0;
+      }
+      hr {
+        width: 40px;
+      }
+    }
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
 }
 
 /* ------------ Store single view ------------- */
 
 main.store_single_view {
-  img {
-    width: 300px;
-  }
   background-color: $background-color-white;
+  margin-top: -400px;
+  img {
+    display: block;
+    width: 95%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 0 20px 0;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 5px 0 15px 10px;
+  }
+  h3 {
+    padding: 10px 0 0 10px;
+  }
+  p {
+    font-size: .75em;
+    padding: 0 10px 20px 10px;
+  }
+  a {
+    background-color: $button-color-grey;
+    color: $background-color-white;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5px 10px;
+    text-decoration: none;
+    &:hover {
+      background-color: $ribbon-color-green;
+      color: $black;
+    }
+  }
+  hr {
+    width: 95%;
+  }
+  button {
+    //display: flex;
+    margin: 10px 0 10px 10px;
+    background-color: #42007f;
+    padding: 10px 90px;
+    font-size: 1em;
+    box-shadow: none;
+    &:hover {
+      background-color: #aa4cff;
+      color: white;
+    }
+  }
 }
 
 /* ------------ Media queries ------------- */
@@ -692,7 +881,7 @@ main.store_single_view {
       margin: 3% 41%;
     }
     &.blog_create {
-      padding: 1% 0 22% 0;
+      padding: 1% 0 260px 0;
     }
   }
 
@@ -764,7 +953,14 @@ main.store_single_view {
     }
 
   }
-
+  main {
+    &.store_single_view {
+      padding: 10px;
+      img {
+        width: 80%;
+      }
+    }
+  }
 }
 
 /* ------------ MIN-WIDTH 814 ------------- */
@@ -781,7 +977,7 @@ main.store_single_view {
     height: auto;
     background: transparent;
     clip-path: initial;
-    margin: -34px 0 0 0;
+    margin: -100px 20px 0 0;
     ul {
       display: flex;
     }
@@ -806,7 +1002,23 @@ main.store_single_view {
   .site-nav--icon {
     display: none;
   }
+
+  main {
+    &.store_single_view {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+    div {
+      &.product_description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
 }
+
+/* ------------ MIN-WIDTH 1023 ------------- */
 
 @media (min-width: 1023px) {
 
@@ -814,14 +1026,7 @@ main.store_single_view {
     margin: 0;
   }
 
-  section {
-    &.create {
-      margin-top: -40%;
-    }
-  }
-
   header {
-
     div {
       &.container {
         margin: 0;
@@ -829,13 +1034,13 @@ main.store_single_view {
     }
     nav {
       &.perm-nav {
-        bottom: 47%;
+        bottom: 4%;
         width: 24%;
-        left: 75%;
+        left: 73%;
       }
       &.site-nav {
         position: absolute;
-        top: 67%;
+        top: 13%;
         right: 29px;
       }
     }

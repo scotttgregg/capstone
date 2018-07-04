@@ -14,7 +14,7 @@ def profile_image_or_default(user):
     if user.profile_img:
         print(user.profile_img.url)
         return mark_safe('<img class="profile_pic" src="{}" alt="{}">'.format(user.profile_img.url, user.username))
-    return mark_safe('<img class="default_profile" src={} alt="Placeholder Image">'.format('/static/accounts/img/profile_default.png'))
+    return mark_safe('<img class="default_profile profile_pic" src={} alt="Placeholder Image">'.format('/static/accounts/img/profile_default.png'))
 
 
 @register.simple_tag

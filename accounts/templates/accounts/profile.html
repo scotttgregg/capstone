@@ -3,11 +3,17 @@
 
 {% block content %}
     <main class="profile_page">
+        {% if user.is_authenticated %}
+            <ul>
+            <li class="admin-button"><a href="{% url 'store_create' %}">New Shop Item</a></li>
+            <li class="admin-button"><a href="{% url 'blog_create' %}?next=/">New Blog Post</a></li>
+            </ul>
+        {% endif %}
         <section class="profile_pic">
             {% profile_image_or_default user %}
         </section>
         <div class="profile_page">
-            <p class="profile">Username: <span>{{ user.username }}</span> </p>
+            <p class="profile">Username: <span>{{ user.username }}</span></p>
             <p class="profile">Height: {{ user.height }}</p>
             <p class="profile">Weight: {{ user.weight }}</p>
             <p class="profile">Bio: {{ user.bio }}</p>

@@ -6,7 +6,7 @@
 
 {% block title %}{{ blog.title }}{% endblock %}
 {% block content %}
-<main class="container single_view">
+<main class="blog single_view">
 
     {% blog_image_or_default blog %}
     <!-- Title -->
@@ -24,7 +24,7 @@
 
     <!--Post content-->
     <p>{{ blog.content }}</p>
-    {% if blog.youtube %}}
+    {% if blog.youtube %}
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ blog.youtube }}" frameborder="0"
             allow="autoplay; encrypted-media" allowfullscreen></iframe>

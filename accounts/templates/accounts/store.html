@@ -8,14 +8,23 @@
     <main class="store">
         <h1>Custom Fitness Programs</h1>
         <section class="product_list">
+                        <ul>
+
             {% for product in products %}
-                <div class="card">
-                    {% store_image_or_default product %}
-                    <h3>{{ product.product_name }}</h3>
-                    <p>{{ product.short_description }}</p>
-                    <a href="{% url 'store_single_view' product.slug %}" class="button">Read More</a>
-                </div>
+                    <li>
+                        <div class="card">
+                            {% store_image_or_default product %}
+                            <h3>{{ product.product_name }}</h3>
+                            <hr>
+                            <p>{{ product.short_description }}</p>
+                            <div class="button">
+                                <a href="{% url 'store_single_view' product.slug %}" class="button">Read More</a>
+                            </div>
+                        </div>
+                    </li>
             {% endfor %}
+                </ul>
+
         </section>
     </main>
 
