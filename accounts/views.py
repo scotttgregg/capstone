@@ -3,7 +3,7 @@ from accounts.models import Blog, Category, ShopItem
 from accounts.forms import BlogModelForm, SignUpForm, ShopItemForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as loginf, authenticate
-
+from django.db.models import Q
 
 def home(request):
     print('dfghj')
@@ -18,6 +18,13 @@ def blog_single_view(request, cat, slug):
 
 def blog(request):
     blog_list = Blog.objects.filter(fitness_library=False)
+    query = request.GET.get("q")
+    if query:
+        queryset_list = blog_list.filter(
+            Q(title__icontains=query)
+            # Q(category__icontains=query) |
+            # Q(alt_text__icontains=query)
+        )
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
 
 

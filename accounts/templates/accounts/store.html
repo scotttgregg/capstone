@@ -8,9 +8,8 @@
     <main class="store">
         <h1>Custom Fitness Programs</h1>
         <section class="product_list">
-                        <ul>
-
-            {% for product in products %}
+            <ul>
+                {% for product in products %}
                     <li>
                         <div class="card">
                             {% store_image_or_default product %}
@@ -22,8 +21,8 @@
                             </div>
                         </div>
                     </li>
-            {% endfor %}
-                </ul>
+                {% endfor %}
+            </ul>
 
         </section>
     </main>

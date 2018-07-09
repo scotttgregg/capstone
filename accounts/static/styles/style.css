@@ -394,14 +394,12 @@ section.create {
 
 form.blog_create {
   margin: 1%;
-  padding: 5% 0 165px 0;
+  padding: 5% 0 10px 0;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px; }
-form p {
-  margin: 0; }
-  form p.cancel {
-    display: block;
-    text-align: center; }
+form p.cancel {
+  display: block;
+  text-align: center; }
 form select {
   margin: 3% 5% 4% 5%; }
 form input#sub-btn {
@@ -424,7 +422,7 @@ form input.btn {
   display: block;
   margin: 11px auto;
   float: none; }
-form input, form select, form textarea {
+form input, form textarea {
   width: 90%;
   padding: 12px 20px;
   margin: 0% 4% 3% 4%;
@@ -432,8 +430,20 @@ form input, form select, form textarea {
   border: 1px solid black;
   box-sizing: border-box;
   border-radius: 4px;
-  cursor: pointer;
-  float: left; }
+  cursor: pointer; }
+  form input#id_image, form textarea#id_image {
+    width: 300px; }
+  form input#sub-btn, form textarea#sub-btn {
+    display: block;
+    margin: 3% auto; }
+form select {
+  padding: 12px 20px;
+  margin: 0% 4% 3% 4%;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer; }
 form textarea {
   height: 100px; }
   form textarea.edit_profile {
@@ -639,25 +649,23 @@ main.store_single_view {
   main.store_single_view hr {
     width: 95%; }
   main.store_single_view button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
     margin: 10px 0 10px 10px;
-    background-color: #42007f;
     padding: 10px 90px;
     font-size: 1em;
     box-shadow: none; }
     main.store_single_view button:hover {
-      background-color: #aa4cff;
+      background-color: #42007f;
       color: white; }
 
 /* ------------ Media queries ------------- */
 @media (min-width: 768px) {
   form input#sub-btn {
     margin: 3% 41%; }
-  form.blog_create {
-    padding: 1% 0 260px 0; }
 
   section.ribbon {
     display: grid;
-    grid-template-columns: 40% 60%; }
+    grid-template-columns: 60% 40%; }
   section.about {
     display: grid;
     grid-template-columns: 50% 50%; }

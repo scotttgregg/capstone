@@ -21,8 +21,6 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'blog_home' %}">Blog</a></li>
                 <li><a href="{% url 'store' %}">Shop Custom Programs</a></li>
-                <li><a href="">Cart</a></li>
-                <li><a href="">Checkout</a></li>
                 {% if user.is_authenticated %}
                     <li><a href={% url 'fit_lib' %}>Fitness Library</a></li>
                     <li><a href="{% url 'profile' %}">Profile</a></li>
