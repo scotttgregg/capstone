@@ -535,6 +535,7 @@ form {
     background-color: $white;
     border-radius: 10px;
   }
+
   p {
     //margin: 0;
     &.cancel {
@@ -542,9 +543,11 @@ form {
       text-align: center;
     }
   }
+
   select {
     margin: 3% 5% 4% 5%;
   }
+
   input {
     &#sub-btn {
       width: auto;
@@ -561,10 +564,12 @@ form {
         display: block;
       }
     }
+
     &:hover {
       //background-color: $ribbon-color-green;
       color: $black;
     }
+
     &.btn {
       width: 25%;
       display: block;
@@ -575,7 +580,7 @@ form {
   input, textarea {
     width: 90%;
     padding: 12px 20px;
-    margin: 0% 4% 3% 4%;
+    margin: 0 4% 3% 4%;
     display: inline-block;
     border: 1px solid $black;
     box-sizing: border-box;
@@ -590,8 +595,8 @@ form {
     }
   }
   select {
-     padding: 12px 20px;
-    margin: 0% 4% 3% 4%;
+    padding: 12px 20px;
+    margin: 0 4% 3% 4%;
     display: inline-block;
     border: 1px solid $black;
     box-sizing: border-box;
@@ -687,10 +692,10 @@ main.sign_up {
     border-radius: 5px;
   }
   form {
-    padding: 5% 0%;
+    padding: 5% 0;
   }
   button {
-    margin: 10% 0% 7% 33%;
+    margin: 10% 0 7% 33%;
   }
   margin: -300px auto 0 auto;
   width: 360px;
@@ -702,8 +707,8 @@ main.profile_page {
   div {
     padding: 0 0 30px 0;
     background-color: $white;
-    border-bottom-left-radiusradius: 5px;
-    border-bottom-right-image: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     &.profile_page {
       margin: 0 auto 0 auto;
       padding: 45px 30px;
@@ -795,13 +800,16 @@ main {
       font-size: .75em;
       text-align: center;
       padding: 10px 10px 0 10px;
+      &.price {
+        padding: 10px;
+      }
     }
     div.card {
       margin-top: 10px;
       margin-left: auto;
       margin-right: auto;
       width: 300px;
-      height: 450px;
+      height: 500px;
       background-color: $white;
       padding: 0 0 10px 0;
       a {
@@ -871,13 +879,15 @@ main.store_single_view {
   hr {
     width: 95%;
   }
-  button {
-    //display: flex;
+  input.store-button {
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     margin: 10px 0 10px 10px;
     padding: 10px 90px;
     font-size: 1em;
     box-shadow: none;
+    border: none;
+    color: white;
+    text-align: center;
     &:hover {
       background-color: #42007f;
       color: white;
@@ -899,7 +909,6 @@ main.store_single_view {
     &.ribbon {
       display: grid;
       grid-template-columns: 60% 40%;
-      &#top-ribbon {
     }
     &.about {
       display: grid;
@@ -908,6 +917,7 @@ main.store_single_view {
         &.about-text {
           grid-column-start: 1;
           grid-row-start: 1;
+          padding: 20px 5px 0 30px;
           h2 {
             padding-bottom: 10px;
           }
@@ -966,11 +976,11 @@ main.store_single_view {
   }
 }
 
+
+
 /* ------------ MIN-WIDTH 814 ------------- */
 
 @media (min-width: 814px) {
-
-  /* ------------ NAVIGATION ------------- */
 
   .menu-toggle {
     display: none;
@@ -1063,8 +1073,9 @@ main.store_single_view {
     line-height: 1.5em;
     padding-top: 50px;
   }
-
 }
+
+/* ------------ MIN-WIDTH 1439 ------------- */
 
 @media (min-width: 1439px) {
   form {
@@ -1075,8 +1086,9 @@ main.store_single_view {
 
   div.about-img {
     img {
-      width: 40%;
+      width: 70%;
     }
   }
 
 }
+

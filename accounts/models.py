@@ -106,6 +106,7 @@ class ShopItem(models.Model):
     short_description = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=500)
     price = models.CharField(max_length=50, null=True)
+    store_button = models.CharField(max_length=1000, blank=True)
 
     def __str__(self):
         return self.product_name

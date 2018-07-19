@@ -14,7 +14,11 @@
             <p>{{ product.short_description }}</p>
             <p>{{ product.price }}</p>
 
-            <button id="buy_now">Buy Now</button>
+
+            {% if product.store_button %}
+                {{ product.store_button|safe }}
+            {% endif %}
+
 
             <section class="review description">
                 <h3>Description</h3>

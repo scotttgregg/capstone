@@ -425,7 +425,7 @@ form input.btn {
 form input, form textarea {
   width: 90%;
   padding: 12px 20px;
-  margin: 0% 4% 3% 4%;
+  margin: 0 4% 3% 4%;
   display: inline-block;
   border: 1px solid black;
   box-sizing: border-box;
@@ -438,7 +438,7 @@ form input, form textarea {
     margin: 3% auto; }
 form select {
   padding: 12px 20px;
-  margin: 0% 4% 3% 4%;
+  margin: 0 4% 3% 4%;
   display: inline-block;
   border: 1px solid black;
   box-sizing: border-box;
@@ -513,9 +513,9 @@ main.sign_up {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 5px; }
   main.sign_up form {
-    padding: 5% 0%; }
+    padding: 5% 0; }
   main.sign_up button {
-    margin: 10% 0% 7% 33%; }
+    margin: 10% 0 7% 33%; }
 
 /* ------------ Profile Page ------------- */
 main.profile_page {
@@ -524,8 +524,8 @@ main.profile_page {
   main.profile_page div {
     padding: 0 0 30px 0;
     background-color: rgba(255, 255, 255, 0.75);
-    border-bottom-left-radiusradius: 5px;
-    border-bottom-right-image: 5px; }
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
     main.profile_page div.profile_page {
       margin: 0 auto 0 auto;
       padding: 45px 30px;
@@ -589,12 +589,14 @@ main.store {
     font-size: .75em;
     text-align: center;
     padding: 10px 10px 0 10px; }
+    main.store p.price {
+      padding: 10px; }
   main.store div.card {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     width: 300px;
-    height: 450px;
+    height: 500px;
     background-color: rgba(255, 255, 255, 0.75);
     padding: 0 0 10px 0; }
     main.store div.card a {
@@ -648,13 +650,16 @@ main.store_single_view {
       color: black; }
   main.store_single_view hr {
     width: 95%; }
-  main.store_single_view button {
+  main.store_single_view input.store-button {
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     margin: 10px 0 10px 10px;
     padding: 10px 90px;
     font-size: 1em;
-    box-shadow: none; }
-    main.store_single_view button:hover {
+    box-shadow: none;
+    border: none;
+    color: white;
+    text-align: center; }
+    main.store_single_view input.store-button:hover {
       background-color: #42007f;
       color: white; }
 
@@ -671,7 +676,8 @@ main.store_single_view {
     grid-template-columns: 50% 50%; }
     section.about div.about-text {
       grid-column-start: 1;
-      grid-row-start: 1; }
+      grid-row-start: 1;
+      padding: 20px 5px 0 30px; }
       section.about div.about-text h2 {
         padding-bottom: 10px; }
       section.about div.about-text p.philosophy {
@@ -709,7 +715,6 @@ main.store_single_view {
       width: 80%; } }
 /* ------------ MIN-WIDTH 814 ------------- */
 @media (min-width: 814px) {
-  /* ------------ NAVIGATION ------------- */
   .menu-toggle {
     display: none; }
 
@@ -768,11 +773,12 @@ main.store_single_view {
   p.philosophy {
     line-height: 1.5em;
     padding-top: 50px; } }
+/* ------------ MIN-WIDTH 1439 ------------- */
 @media (min-width: 1439px) {
   form textarea {
     height: 140px; }
 
   div.about-img img {
-    width: 40%; } }
+    width: 70%; } }
 
 /*# sourceMappingURL=style.css.map */

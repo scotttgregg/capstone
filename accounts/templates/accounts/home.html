@@ -3,13 +3,17 @@
 
 {% load static %}
 
+
+{% load accounts_tags %}
+
+
 {% block content %}
 
     <main id="home">
         <section class="ribbon" id="top-ribbon">
-            <h2>Get a custom 4-week program made specifically for you!</h2>
+            <h2>Get a custom fitness program designed to meet your needs!</h2>
             <div class="button">
-                <a class="button" href="#">Learn More</a>
+                <a class="button" href="{% url 'store' %}">Learn More</a>
             </div>
         </section>
         <section class="about">
@@ -18,11 +22,20 @@
             </div>
             <div class="about-text">
                 <h2>The Primal Prowess Philosophy</h2>
-                <p class="philosophy">I consider myself to be an "outside of the box" practitioner. I'm a divergent
-                    thinker and believe that one cannot design the superior athlete without being unconventional,
-                    or otherwise unorthodox, in the training methods implemented. I'm classically educated like most
-                    of society. Although I see the relevance in this, I also strongly feel that self-education through
-                    experience is just as necessary; this is what truly separates me from others.
+                <p class="philosophy"> I believe that one cannot design an innovative athlete without being
+                    unconventional, or otherwise unorthodox, in the training methods implemented. Coaches tend to be
+                    regarded as "taboo" or "going against the grain" by implementing new methods of training. However,
+                    this is the path to innovation. One should always keep in mind the previous knowledge they have
+                    attained regarding training methodology, but it’s the analytical process of past knowledge that
+                    leads to the revolutionary training protocols of today.</p>
+                <p class="philosophy">
+                    If one desires to achieve a level of athleticism unlike anyone has ever seen, then one must also
+                    strive to train like no one else. What will put you at an advantage over the hungry, vicious
+                    competition? Your arsenal of athletic abilities must be innovative, developmentally sound, and
+                    devastating to the opposition. Upon subscribing to this site, you will have the resources required
+                    to formulate dynamic, innovative, and relevant athletic training methods; enabling you to pull back
+                    on the throttle of your primal, infinite potential.
+
                 </p>
             </div>
         </section>
@@ -47,40 +60,27 @@
         </section>
 
         <section id="product-section">
-            <h2>Personalized Training Programs</h2>
-            <h3>Click on the programs to learn more!</h3>
-            <div class="product-list">
+            <h1>Custom Fitness Programs</h1>
+            <section class="product_list">
                 <ul>
-                    <li class="products">
-                        <a href="#">
-                            <img src="{% static 'accounts/img/rob-deadlift.jpg' %}">
-{#                            <button class="btn">Add To Cart</button>#}
-                            <h4>4-Week Training Program</h4>
-                        </a>
-                    </li>
-                    <li class="products">
-                        <a href="#">
-                            <img src="{% static 'accounts/img/rob-sprint.jpg' %}">
-{#                            <button class="btn">Add To Cart</button>#}
-                            <h4>Primal Reclamation Package</h4>
-                        </a>
-                    </li>
-                    <li class="products">
-                        <a href="#">
-                            <img src="{% static 'accounts/img/rob-plank.jpg' %}">
-{#                            <button class="btn">Add To Cart</button>#}
-                            <h4>Place Holder Text</h4>
-                        </a>
-                    </li>
-                    <li class="products">
-                        <a href="#">
-                            <img src="{% static 'accounts/img/rob-plank.jpg' %}">
-{#                            <button class="btn">Add To Cart</button>#}
-                            <h4>Place Holder Text</h4>
-                        </a>
-                    </li>
+                    {% for product in products %}
+                        <li>
+                            <div class="card">
+                                {% store_image_or_default product %}
+                                <h3>{{ product.product_name }}</h3>
+                                <hr>
+                                <p class="price">{{ product.price }}</p>
+                                <hr>
+                                <p>{{ product.short_description }}</p>
+                                <div class="button">
+                                    <a href="{% url 'store_single_view' product.slug %}" class="button">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
                 </ul>
-            </div>
+            </section>
         </section>
 
         <section class="ribbon" id="bottom-ribbon">
