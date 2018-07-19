@@ -1,9 +1,14 @@
-from django.shortcuts import get_object_or_404, HttpResponseRedirect, reverse, render, redirect
+from django.shortcuts import get_object_or_404, HttpResponseRedirect, reverse, render, redirect, HttpResponse
 from accounts.models import Blog, Category, ShopItem
 from accounts.forms import BlogModelForm, SignUpForm, ShopItemForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as loginf, authenticate
 from django.db.models import Q
+import sys
+import urllib.parse
+import requests
+from django.views.decorators.csrf import csrf_exempt
+
 
 def home(request):
     print('dfghj')
@@ -120,3 +125,32 @@ def store_create(request):
     return render(request, 'accounts/store_create.html', {
         'form': form
     })
+
+
+def success(request):
+    if request.method == "POST":
+        for k, v in request.POST.items():
+            print("{}: {}".format(k, v))
+    if request.method == "GET":
+        for k, v in request.GET.items():
+            print("{}: {}".format(k, v))
+    return HttpResponse("Success!")
+
+
+@csrf_exempt
+def ipn(request):
+    print('IPN')
+    if request.method == 'POST':
+        buyer, created = BuyerResponse.objects.get_or_create(
+            email=request.POST.get('payer_email'),
+            date=datetime.datetime.today(),
+            item_name=request.POST.get('item_name')
+        )
+        if created:
+            # send email with pdf attachment
+            pass
+        else:
+            # buyer probably already has been emailed.d== 'POST':
+            pass
+        return HttpResponse(status=200)
+    return HttpResponse(status=501)

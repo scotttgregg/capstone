@@ -23,8 +23,14 @@ from accounts import views
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('', views.home, name='home'),
+
+                  path('success/', views.success, name='success'),
+                  path('ipn/', views.ipn, name='ipn'),
+
                   path('accounts/', include('accounts.urls')),
                   path('store/', include('accounts.urls_store')),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

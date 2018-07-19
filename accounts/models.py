@@ -127,3 +127,10 @@ class ShopItem(models.Model):
         super().save(args, kwargs)
 
 
+class BuyerResponse(models.Model):
+    email = models.CharField(max_length=50)
+    date = models.
+
+
+
+
