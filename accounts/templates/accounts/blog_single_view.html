@@ -23,7 +23,12 @@
     <p class="post-time">Posted on {{ blog.date }}</p>
 
     <!--Post content-->
-    <p>{{ blog.content }}</p>
+    <p>
+        {% autoescape off %}
+        {{ blog.content }}
+
+        {% endautoescape %}
+    </p>
     {% if blog.youtube %}
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ blog.youtube }}" frameborder="0"

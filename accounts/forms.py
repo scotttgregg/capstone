@@ -1,5 +1,5 @@
-from django import forms
 from accounts.models import Blog, User, ShopItem
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -18,4 +18,12 @@ class SignUpForm(UserCreationForm):
 class ShopItemForm(forms.ModelForm):
     class Meta:
         model = ShopItem
-        fields = ['product_name', 'file', 'img', 'alt_text', 'short_description', 'description', 'price', 'store_button']
+        fields = [
+            'product_name', 'file', 'img', 'alt_text', 'short_description', 'description', 'price', 'store_button'
+        ]
+
+
+class ContactForm(forms.Form):
+    contact_name = forms.CharField(required=True)
+    contact_email = forms.EmailField(required=True)
+    content = forms.CharField(required=True, widget=forms.Textarea)

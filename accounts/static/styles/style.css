@@ -250,16 +250,17 @@ p.philosophy {
 #product-section {
   text-align: center;
   padding: 5% 0 5% 0; }
+  #product-section h1 {
+    font-size: 2em;
+    color: white;
+    font-weight: bolder; }
   #product-section h2 {
     font-size: 1.5em;
     font-weight: 900;
     color: white; }
   #product-section h3 {
-    font-size: 1em;
-    font-weight: 800;
-    color: white; }
-  #product-section img {
-    width: 250px; }
+    text-align: center;
+    padding: 13px 0 5px 0; }
   #product-section h4 {
     margin: -2px auto 0 auto;
     padding: 5% 0;
@@ -278,6 +279,37 @@ p.philosophy {
     flex-wrap: wrap;
     justify-content: space-evenly; }
 
+div.card {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 515px;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 0 0 10px 0; }
+  div.card a {
+    background-color: #404040;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5px 10px;
+    text-decoration: none; }
+    div.card a:hover {
+      background-color: rgba(169, 242, 0, 0.55);
+      color: black; }
+  div.card div.button {
+    display: flex;
+    padding: 30px 0 5px 0; }
+  div.card hr {
+    width: 60px; }
+  div.card img {
+    width: 300px;
+    height: 300px; }
+  div.card p.price {
+    font-size: 2em;
+    font-weight: bolder;
+    color: #6e8efb; }
+
 /* ------------ HOME/Contact ------------- */
 section.contact {
   background-color: white; }
@@ -287,8 +319,6 @@ section.contact {
     font-size: 1.75em;
     font-weight: 900;
     text-align: center; }
-    section.contact h2.certs {
-      margin: 0 0 89px 0; }
   section.contact h3 {
     margin: 0;
     font-size: 1em;
@@ -300,6 +330,9 @@ section.contact {
     width: 100%; }
   section.contact div.button {
     padding-top: 40px; }
+  section.contact div form div {
+    display: flex;
+    justify-content: center; }
 
 form#contact-form {
   margin: 3%;
@@ -355,10 +388,10 @@ main.blog {
     color: #3581B8; }
     main.blog a.author:hover {
       color: black; }
-  main.blog p.post-time {
-    font-size: .75em; }
-  main.blog p.blog-text {
-    padding: 0 0 20px 0; }
+  main.blog p {
+    padding: 3px 10px 10px 0px; }
+    main.blog p.post-time {
+      font-size: .75em; }
   main.blog.single_view {
     padding: 0 0 5% 0; }
     main.blog.single_view p {
@@ -367,6 +400,33 @@ main.blog {
       max-width: 100%;
       display: block;
       margin: 10px auto; }
+
+form.search {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-top: -450px; }
+  form.search input {
+    margin: 0;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1; }
+    form.search input.search-bar {
+      width: 250px; }
+  form.search button.search-button {
+    float: left;
+    width: 50px;
+    padding: 10px;
+    background: #3581B8;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    /* Prevent double borders */
+    cursor: pointer; }
 
 a.read-more {
   width: 100%;
@@ -509,13 +569,26 @@ main.sign_up {
     padding: 0 0 20px 0;
     color: white;
     text-align: center; }
+    main.sign_up h2 span {
+      font-size: 1.5em;
+      color: #a9f200; }
   main.sign_up div {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 5px; }
   main.sign_up form {
     padding: 5% 0; }
-  main.sign_up button {
-    margin: 10% 0 7% 33%; }
+  main.sign_up input.store-button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    margin: 10px 0 10px 10px;
+    padding: 10px 90px;
+    font-size: 1em;
+    box-shadow: none;
+    border: none;
+    color: white;
+    text-align: center; }
+    main.sign_up input.store-button:hover {
+      background-color: #42007f;
+      color: white; }
 
 /* ------------ Profile Page ------------- */
 main.profile_page {
@@ -586,37 +659,11 @@ main.store {
     text-align: center;
     padding: 13px 0 5px 0; }
   main.store p {
-    font-size: .75em;
-    text-align: center;
-    padding: 10px 10px 0 10px; }
+    text-align: center; }
     main.store p.price {
-      padding: 10px; }
-  main.store div.card {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    height: 500px;
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 0 0 10px 0; }
-    main.store div.card a {
-      background-color: #404040;
-      color: white;
-      border-radius: 5px;
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      padding: 5px 10px;
-      text-decoration: none; }
-      main.store div.card a:hover {
-        background-color: rgba(169, 242, 0, 0.55);
-        color: black; }
-    main.store div.card div.button {
-      display: flex;
-      padding: 30px 0 5px 0; }
-    main.store div.card hr {
-      width: 40px; }
-  main.store img {
-    width: 300px;
-    height: 300px; }
+      font-size: 2em;
+      font-weight: bolder;
+      color: #6e8efb; }
 
 /* ------------ Store single view ------------- */
 main.store_single_view {

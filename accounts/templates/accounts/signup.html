@@ -3,7 +3,7 @@
 {% block content %}
     <main class="sign_up">
         <h1>Sign Up</h1>
-        <h2>Get access to weekly workouts, nutrition tips, and more for just $19/mo.</h2>
+        <h2>Get access to weekly workouts, nutrition tips, and more for just <span>$29/mo.</span></h2>
         <div class="sign_up">
 
             <form method="post">
@@ -20,14 +20,19 @@
                         {% endfor %}
                     </p>
                 {% endfor %}
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PJ2MCE8PXTM9L">
-                    <button type="submit">
-                        Sign up
-                    </button>
-                </a>
-
-
             </form>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="WWQDGAEMPLFBQ">
+                <input type="submit" class="store-button"
+                       name="Sign Up" value="Sign Up" alt="PayPal">
+            </form>
+
+
         </div>
     </main>
 {% endblock %}
+
+
+
+

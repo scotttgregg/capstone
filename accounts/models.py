@@ -128,8 +128,9 @@ class ShopItem(models.Model):
 
 
 class BuyerResponse(models.Model):
-    email = models.CharField(max_length=50)
-    date = models.
+    email = models.CharField(max_length=500)
+    date = models.DateTimeField()
+    item_name = models.CharField(max_length=500)
 
 
 

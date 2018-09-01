@@ -3,7 +3,7 @@
 
 {% block content %}
     <main class="profile_page">
-        {% if user.is_authenticated %}
+        {% if user.is_staff %}
             <ul>
             <li class="admin-button"><a href="{% url 'store_create' %}">New Shop Item</a></li>
             <li class="admin-button"><a href="{% url 'blog_create' %}?next=/">New Blog Post</a></li>

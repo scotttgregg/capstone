@@ -94,32 +94,11 @@
             <div class="contact container">
                 <h2>Contact</h2>
                 <h3>Have questions about these products? Shoot me a message!</h3>
-                <form id="contact-form" action="/my-handling-form-page" method="post">
-                     
-                    <div>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="user_name">
-                    </div>
-
-                     
-                    <div>
-                        <label for="mail">E-mail:</label>
-                        <input type="email" id="mail" name="user_email">
-                    </div>
-
-                    <div>
-                        <label for="msg">Message:</label>
-                        <textarea id="msg" name="user_message"></textarea>
-                    </div>
-
-                    <div class="button">
-                        <button type="submit">Submit</button>
-                    </div>
-                </form>
+                {% include "accounts/contact.html" %}
             </div>
             <div class="certs">
                 <h2 class="certs">Certifications</h2>
-                <img src="{% static 'accounts/img/logos.jpg' %}" class="cert_logos">
+                <img src="{% static 'accounts/img/robs-certs.jpg' %}" class="cert_logos">
             </div>
         </section>
 

@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,7 +25,7 @@ SECRET_KEY = '^^4a@m8_^z-oj1j%*u)p%t#%kdq(fi4)aklwp2cpob*#mw4t8o'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "db33a1a9.ngrok.io",
+    "f63de5ea.ngrok.io",
     "127.0.0.1",
     "localhost"
 ]
@@ -144,4 +145,13 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'profile'
 
+
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+ACCOUNT_EMAIL_VERIFICATION = "none"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'scotttgregg@gmail.com'
+EMAIL_HOST_PASSWORD = 'ZoeyBaby__11'
+EMAIL_PORT = 587
 

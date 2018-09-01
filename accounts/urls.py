@@ -2,7 +2,6 @@ from django.urls import path
 from accounts import views
 from django.contrib.auth.views import login, logout
 
-
 urlpatterns = [
 
     path('blog/', views.blog, name='blog_home'),
@@ -14,6 +13,5 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('profile/', views.profile, name='profile'),
     path('profile_edit/', views.profile_edit, name='profile_edit'),
-
 
 ]

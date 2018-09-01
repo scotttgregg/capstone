@@ -1,35 +1,44 @@
 from django.shortcuts import get_object_or_404, HttpResponseRedirect, reverse, render, redirect, HttpResponse
-from accounts.models import Blog, Category, ShopItem
-from accounts.forms import BlogModelForm, SignUpForm, ShopItemForm
+from accounts.models import Blog, Category, ShopItem, BuyerResponse
+from accounts.forms import BlogModelForm, SignUpForm, ShopItemForm, ContactForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as loginf, authenticate
 from django.db.models import Q
-import sys
-import urllib.parse
-import requests
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
+import os
+from django.utils import timezone
+
 from django.views.decorators.csrf import csrf_exempt
 
 
 def home(request):
-    print('dfghj')
-    return render(request, "accounts/home.html")
+    form = ContactForm()
+    products = ShopItem.objects.all().order_by('-id')[:4]
+    if request.method == "POST":
+        subject = 'New Contact {}'.format(request.POST.get("contact_name"))
+        message = request.POST.get("content")
+        email_from = request.POST.get("contact_email")
+        msg = EmailMultiAlternatives(subject, message, email_from, ["scotttgregg@gmail.com"])
+        msg.send()
+        return render()
+    return render(request, "accounts/home.html", {'form': form, 'products': products})
 
 
 def blog_single_view(request, cat, slug):
     blog = get_object_or_404(Blog, category__slug=cat, slug=slug)
+    blog.content = '<br>'.join(blog.content.split('\r\n'))
     cat = Category.objects.all()
     return render(request, 'accounts/blog_single_view.html', {'blog': blog, 'cat': cat})
 
 
 def blog(request):
     blog_list = Blog.objects.filter(fitness_library=False)
-    query = request.GET.get("q")
-    if query:
-        queryset_list = blog_list.filter(
-            Q(title__icontains=query)
-            # Q(category__icontains=query) |
-            # Q(alt_text__icontains=query)
-        )
+    if request.method == 'POST':
+        print('posted')
+        query = request.POST.get('q')
+        results = Blog.objects.filter(title__icontains=query)
+        return render(request, "accounts/blog_home.html", {'blogs': results})
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
 
 
@@ -55,6 +64,11 @@ def blog_create(request):
 @login_required
 def fitness_library(request):
     blog_list = Blog.objects.filter(fitness_library=True)
+    if request.method == 'POST':
+        print('posted')
+        query = request.POST.get('q')
+        results = Blog.objects.filter(title__icontains=query)
+        return render(request, "accounts/blog_home.html", {'blogs': results})
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
 
 
@@ -137,19 +151,31 @@ def success(request):
     return HttpResponse("Success!")
 
 
+def email(recipient):
+    subject = 'Thank you for your purchase! Follow the instructions in email'
+    message = 'Fill out the attached form and send it back to rob.bozada@nike.com'
+    email_from = settings.EMAIL_HOST_USER
+    msg = EmailMultiAlternatives(subject, message, email_from, [recipient])
+    # TODO: Change this to the correct file and filename
+    pdf = open(os.path.join(settings.BASE_DIR, 'media', 'PP-Intake-Form-PDF.pdf'), 'rb').read()
+    msg.attach('myfile.pdf', pdf, 'application/pdf')
+    msg.send()
+
+
 @csrf_exempt
 def ipn(request):
     print('IPN')
     if request.method == 'POST':
         buyer, created = BuyerResponse.objects.get_or_create(
             email=request.POST.get('payer_email'),
-            date=datetime.datetime.today(),
+            date=timezone.now(),
             item_name=request.POST.get('item_name')
         )
         if created:
-            # send email with pdf attachment
-            pass
+            print('new buyer')
+            email(request.POST.get('payer_email'))
         else:
+            print('not a new buyer')
             # buyer probably already has been emailed.d== 'POST':
             pass
         return HttpResponse(status=200)
