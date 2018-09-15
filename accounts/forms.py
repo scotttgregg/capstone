@@ -1,6 +1,7 @@
 from accounts.models import Blog, User, ShopItem
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from martor.fields import MartorFormField
 
 
 class BlogModelForm(forms.ModelForm):
@@ -27,3 +28,7 @@ class ContactForm(forms.Form):
     contact_name = forms.CharField(required=True)
     contact_email = forms.EmailField(required=True)
     content = forms.CharField(required=True, widget=forms.Textarea)
+
+
+class PostForm(forms.Form):
+    description = MartorFormField()

@@ -93,7 +93,7 @@ span.rob {
 }
 
 .site-nav ul {
-  margin: 0;
+  margin: 0 10px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -263,7 +263,7 @@ section.ribbon {
     line-height: 1.5em;
   }
   a {
-    padding: 5px 7px;
+    padding: 10px 20px;
     background-color: $button-color-grey;
     color: white;
     text-decoration: none;
@@ -279,8 +279,9 @@ section.ribbon {
     margin: 0 auto 15px auto;
   }
   p {
-    margin: 20px -20px 15px -20px;
+    margin: 20px 0 15px -20px;
     text-indent: 1em;
+    padding: 5px 10px;
   }
 }
 
@@ -412,6 +413,7 @@ div.card {
       font-weight: bolder;
       color: #6e8efb;
     }
+    padding: 0 3px;
   }
 }
 
@@ -460,8 +462,7 @@ form#contact-form {
 img {
   &.cert_logos {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 50px auto;
     max-width: 95%;
   }
 }
@@ -495,10 +496,15 @@ button {
 
 /* ------------ blog ------------- */
 
+.trumbowyg-editor {
+  background-color: #FFFFFF;
+}
+
 main.blog {
   background: $white;
-  margin: 10px 10px;
+  margin: 10px 5%;
   padding: 20px 20px;
+  //max-width: 1200px;
   h2 {
     padding: 20px 20px;
     font-size: 2em;
@@ -533,15 +539,22 @@ main.blog {
     iframe {
       max-width: 100%;
       display: block;
-      margin: 10px auto;
+      margin: 67px auto;
     }
   }
 }
 
+div {
+    &.pagination {
+      text-align: center;
+      margin: 40px 0;
+    }
+  }
+
 form.search {
   display: flex;
   justify-content: flex-end;
-  margin-right: 10px;
+  margin-right: 5%;
   margin-top: -450px;
   input {
     margin: 0;
@@ -602,7 +615,7 @@ section.create {
 
 form {
   &.blog_create {
-    margin: 1%;
+    margin: 1% 5%;
     padding: 5% 0 10px 0;
     background-color: $white;
     border-radius: 10px;
@@ -648,9 +661,9 @@ form {
       float: none;
     }
   }
-  input, textarea {
-    width: 90%;
-    padding: 12px 20px;
+  input {
+    width: 30%;
+    padding: 12px 2px;
     margin: 0 4% 3% 4%;
     display: inline-block;
     border: 1px solid $black;
@@ -677,6 +690,7 @@ form {
   }
   textarea {
     height: 100px;
+    margin: 1% 3% 1% 3%;
     &.edit_profile { // edit_profile form
       height: 30px;
     }
@@ -688,7 +702,7 @@ img {
     display: block;
     margin: 0 auto;
     padding: 10px 0;
-    max-width: 50%;
+    max-width: 30%;
     height: auto;
   }
 }
@@ -810,7 +824,7 @@ main.profile_page {
   }
   section {
     //width: 360px;
-    background-color: $call-to-action02;
+    background-color: rgba(53, 129, 184, 0.72);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     max-width: 1024px;
@@ -1126,6 +1140,11 @@ main.store_single_view {
   p.philosophy {
     line-height: 1.5em;
     padding-top: 50px;
+  }
+
+  .book-button {
+    margin-top: -50px;
+    margin-right: 50px;
   }
 }
 

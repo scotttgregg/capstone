@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as loginf, authenticate
 from django.db.models import Q
 from django.core.mail import EmailMultiAlternatives
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.conf import settings
 import os
 from django.utils import timezone
@@ -34,10 +35,19 @@ def blog_single_view(request, cat, slug):
 
 def blog(request):
     blog_list = Blog.objects.filter(fitness_library=False)
+    p = Paginator(blog_list, 3)
+    page = request.GET.get('page')
+    blog_list = p.get_page(page)
     if request.method == 'POST':
         print('posted')
         query = request.POST.get('q')
-        results = Blog.objects.filter(title__icontains=query)
+        # results = Blog.objects.filter(title__icontains=query).filter(fitness_library=False)
+        if query is not None and query != '':
+
+            results = Blog.objects.filter(
+                Q(title__icontains=query) |
+                Q(content__icontains=query)
+            ).filter(fitness_library=False)
         return render(request, "accounts/blog_home.html", {'blogs': results})
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
 
@@ -46,8 +56,6 @@ def blog_create(request):
     form = BlogModelForm()
     if request.method == 'POST':
         form = BlogModelForm(request.POST, request.FILES)
-
-        # tags = request.POST.getlist('tag')
         print(request.POST)
         blog = form.save(commit=False)
         blog.author = request.user
@@ -55,7 +63,6 @@ def blog_create(request):
         return HttpResponseRedirect(reverse('blog_single_view', kwargs={'cat': blog.category.slug, 'slug': blog.slug}))
 
     return render(request, 'accounts/blog_create.html', {
-        # 'tag': Tag.objects.all()
         'cat': Category.objects.all(),
         'form': form
     })
@@ -67,7 +74,13 @@ def fitness_library(request):
     if request.method == 'POST':
         print('posted')
         query = request.POST.get('q')
-        results = Blog.objects.filter(title__icontains=query)
+        if query is not None and query != '':
+
+            results = Blog.objects.filter(
+                Q(title__icontains=query) |
+                Q(content__icontains=query)
+            ).filter(fitness_library=True)
+
         return render(request, "accounts/blog_home.html", {'blogs': results})
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
 
@@ -82,7 +95,6 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            # user.refresh_from_db()  # load the profile instance created by the signal
             user.save()
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)
