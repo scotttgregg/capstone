@@ -34,10 +34,6 @@ def blog_single_view(request, cat, slug):
 
 
 def blog(request):
-    blog_list = Blog.objects.filter(fitness_library=False)
-    p = Paginator(blog_list, 3)
-    page = request.GET.get('page')
-    blog_list = p.get_page(page)
     if request.method == 'POST':
         print('posted')
         query = request.POST.get('q')
@@ -48,7 +44,14 @@ def blog(request):
                 Q(title__icontains=query) |
                 Q(content__icontains=query)
             ).filter(fitness_library=False)
-        return render(request, "accounts/blog_home.html", {'blogs': results})
+            p = Paginator(results, 3)
+            page = request.POST.get('page')
+            results = p.get_page(page)
+            return render(request, "accounts/blog_home.html", {'blogs': results})
+    blog_list = Blog.objects.filter(fitness_library=False)
+    p = Paginator(blog_list, 3)
+    page = request.GET.get('page')
+    blog_list = p.get_page(page)
     return render(request, "accounts/blog_home.html", {'blogs': blog_list})
 
 

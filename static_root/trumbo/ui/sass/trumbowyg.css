@@ -30,7 +30,7 @@
 .trumbowyg-editor {
   display: block;
   position: relative;
-  border: 1px solid #DDD;
+  border: 1px solid black;
   width: 92%;
   min-height: 300px;
   margin: 17px auto; }

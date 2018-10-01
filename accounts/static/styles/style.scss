@@ -25,11 +25,7 @@ body {
 }
 
 main {
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, p {
-  //margin: 5%;
+  margin: 0 auto;
 }
 
 /* ------------ NAVIGATION ------------- */
@@ -39,6 +35,14 @@ h1, h2, h3, h4, h5, p {
   max-width: 100%;
   margin: 0 auto;
 }
+
+div.container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 
 header {
   background: $menu-color-darkgreay;
@@ -93,7 +97,7 @@ span.rob {
 }
 
 .site-nav ul {
-  margin: 0 10px 0 0;
+  //margin: 0 10px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -170,7 +174,7 @@ span.rob {
 }
 
 .perm-nav {
-  bottom: -46px;
+  bottom: -35px;
   left: 0;
   position: absolute;
   overflow: hidden;
@@ -254,7 +258,7 @@ footer img {
 
 section.ribbon {
   background-color: $ribbon-color-green;
-  padding: 3em 2em;
+  padding: 2em 2em;
   h2 {
     margin: 0;
     font-size: 1.2em;
@@ -290,7 +294,7 @@ div.button {
   justify-content: center;
   width: 100%;
   text-align: center;
-  //padding: 20px 0;
+  padding: 20px 0 0 0;
 }
 
 div.book-button {
@@ -502,9 +506,9 @@ button {
 
 main.blog {
   background: $white;
-  margin: 10px 5%;
+  margin: 10px auto;
   padding: 20px 20px;
-  //max-width: 1200px;
+  max-width: 1200px;
   h2 {
     padding: 20px 20px;
     font-size: 2em;
@@ -526,7 +530,7 @@ main.blog {
     }
   }
   p {
-    padding: 3px 10px 10px 0px;
+    padding: 3px 10px 10px 0;
     &.post-time {
       font-size: .75em;
     }
@@ -545,11 +549,11 @@ main.blog {
 }
 
 div {
-    &.pagination {
-      text-align: center;
-      margin: 40px 0;
-    }
+  &.pagination {
+    text-align: center;
+    margin: 40px 0;
   }
+}
 
 form.search {
   display: flex;
@@ -878,7 +882,7 @@ main.profile_edit {
 
 main {
   &.store {
-    margin-top: -400px;
+    margin: -400px auto 20px auto;
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -979,6 +983,7 @@ main.store_single_view {
     &.ribbon {
       display: grid;
       grid-template-columns: 60% 40%;
+      padding: 3em 2em;
     }
     &.about {
       display: grid;
@@ -1008,11 +1013,9 @@ main.store_single_view {
       grid-column-start: 2;
       align-content: center;
       align-items: center;
+      padding: 0;
     }
-    &.contact {
-      display: grid;
-      grid-template-columns: 50% 50%;
-    }
+
   }
 
   footer {
@@ -1048,7 +1051,7 @@ main.store_single_view {
 
 /* ------------ MIN-WIDTH 814 ------------- */
 
-@media (min-width: 814px) {
+@media (min-width: 1020px) {
 
   .menu-toggle {
     display: none;
@@ -1058,16 +1061,17 @@ main.store_single_view {
     height: auto;
     background: transparent;
     clip-path: initial;
-    margin: -100px 20px 0 0;
+    position: initial;
     ul {
       display: flex;
+      justify-content: space-between;
     }
   }
 
   .site-nav li {
     //border-right: 1px solid $theme-color-green;
     border-bottom: none;
-    padding: 10px;
+    //padding: 10px;
   }
 
   .site-nav a {
@@ -1104,13 +1108,14 @@ main.store_single_view {
 @media (min-width: 1023px) {
 
   .site-nav {
-    margin: 0;
+    //margin: 0;
   }
 
   header {
     div {
       &.container {
-        margin: 0;
+        max-width: 1200px;
+        margin: 0 auto 20px auto;
       }
     }
     nav {
@@ -1120,9 +1125,9 @@ main.store_single_view {
         left: 73%;
       }
       &.site-nav {
-        position: absolute;
-        top: 13%;
-        right: 29px;
+        //position: absolute;
+        //top: 13%;
+        //right: 29px;
       }
     }
     a {
@@ -1134,7 +1139,7 @@ main.store_single_view {
         }
       }
     }
-    padding: 16px 0 3.75em 10px;
+    //padding: 16px 0 3.75em 10px;
   }
 
   p.philosophy {
@@ -1164,4 +1169,5 @@ main.store_single_view {
   }
 
 }
+
 

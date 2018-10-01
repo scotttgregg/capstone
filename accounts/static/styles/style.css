@@ -8,13 +8,19 @@ body {
   font-family: 'Open Sans', sans-serif; }
 
 main {
-  margin: 0; }
+  margin: 0 auto; }
 
 /* ------------ NAVIGATION ------------- */
 .container {
   width: 95%;
   max-width: 100%;
   margin: 0 auto; }
+
+div.container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 50%; }
 
 header {
   background: rgba(0, 0, 0, 0.5);
@@ -61,7 +67,6 @@ span.rob {
   /*   display: block; */ }
 
 .site-nav ul {
-  margin: 0 10px 0 0;
   padding: 0;
   list-style: none; }
 
@@ -125,7 +130,7 @@ span.rob {
   transform: translateY(-3px) rotate(-90deg); }
 
 .perm-nav {
-  bottom: -46px;
+  bottom: -35px;
   left: 0;
   position: absolute;
   overflow: hidden;
@@ -190,7 +195,7 @@ footer img {
 /* ------------ HOME/Ribbons ------------- */
 section.ribbon {
   background-color: rgba(169, 242, 0, 0.55);
-  padding: 3em 2em; }
+  padding: 2em 2em; }
   section.ribbon h2 {
     margin: 0;
     font-size: 1.2em;
@@ -219,7 +224,8 @@ div.button {
   display: flex;
   justify-content: center;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  padding: 20px 0 0 0; }
 
 div.book-button {
   text-align: right; }
@@ -376,8 +382,9 @@ button {
 
 main.blog {
   background: rgba(255, 255, 255, 0.75);
-  margin: 10px 5%;
-  padding: 20px 20px; }
+  margin: 10px auto;
+  padding: 20px 20px;
+  max-width: 1200px; }
   main.blog h2 {
     padding: 20px 20px;
     font-size: 2em;
@@ -394,7 +401,7 @@ main.blog {
     main.blog a.author:hover {
       color: black; }
   main.blog p {
-    padding: 3px 10px 10px 0px; }
+    padding: 3px 10px 10px 0; }
     main.blog p.post-time {
       font-size: .75em; }
   main.blog.single_view {
@@ -654,7 +661,7 @@ main.profile_edit ul {
 
 /* ------------ Store  ------------- */
 main.store {
-  margin-top: -400px; }
+  margin: -400px auto 20px auto; }
   main.store ul {
     display: flex;
     flex-wrap: wrap;
@@ -727,7 +734,8 @@ main.store_single_view {
 
   section.ribbon {
     display: grid;
-    grid-template-columns: 60% 40%; }
+    grid-template-columns: 60% 40%;
+    padding: 3em 2em; }
   section.about {
     display: grid;
     grid-template-columns: 50% 50%; }
@@ -748,10 +756,8 @@ main.store_single_view {
   section div.button {
     grid-column-start: 2;
     align-content: center;
-    align-items: center; }
-  section.contact {
-    display: grid;
-    grid-template-columns: 50% 50%; }
+    align-items: center;
+    padding: 0; }
 
   footer section.top {
     display: grid;
@@ -771,7 +777,7 @@ main.store_single_view {
     main.store_single_view img {
       width: 80%; } }
 /* ------------ MIN-WIDTH 814 ------------- */
-@media (min-width: 814px) {
+@media (min-width: 1020px) {
   .menu-toggle {
     display: none; }
 
@@ -779,13 +785,13 @@ main.store_single_view {
     height: auto;
     background: transparent;
     clip-path: initial;
-    margin: -100px 20px 0 0; }
+    position: initial; }
     .site-nav ul {
-      display: flex; }
+      display: flex;
+      justify-content: space-between; }
 
   .site-nav li {
-    border-bottom: none;
-    padding: 10px; }
+    border-bottom: none; }
 
   .site-nav a {
     padding: 0; }
@@ -806,26 +812,18 @@ main.store_single_view {
     justify-content: center; } }
 /* ------------ MIN-WIDTH 1023 ------------- */
 @media (min-width: 1023px) {
-  .site-nav {
-    margin: 0; }
-
-  header {
-    padding: 16px 0 3.75em 10px; }
-    header div.container {
-      margin: 0; }
-    header nav.perm-nav {
-      bottom: 4%;
-      width: 24%;
-      left: 73%; }
-    header nav.site-nav {
-      position: absolute;
-      top: 13%;
-      right: 29px; }
-    header a.action {
-      border-radius: 5px;
-      width: 49%; }
-      header a.action.log-in {
-        margin-left: 3px; }
+  header div.container {
+    max-width: 1200px;
+    margin: 0 auto 20px auto; }
+  header nav.perm-nav {
+    bottom: 4%;
+    width: 24%;
+    left: 73%; }
+  header a.action {
+    border-radius: 5px;
+    width: 49%; }
+    header a.action.log-in {
+      margin-left: 3px; }
 
   p.philosophy {
     line-height: 1.5em;
