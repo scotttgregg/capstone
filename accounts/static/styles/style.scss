@@ -36,13 +36,12 @@ main {
   margin: 0 auto;
 }
 
-div.container {
+div.header {
   max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
 }
-
 
 header {
   background: $menu-color-darkgreay;
@@ -280,7 +279,7 @@ section.ribbon {
     width: 200px;
     height: auto;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: 0 450px 0 auto;
   }
   p {
     margin: 20px 0 15px -20px;
@@ -337,6 +336,12 @@ p {
 /* ------------ HOME/Products ------------- */
 
 #product-section {
+
+  .product_list {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   h1 {
     font-size: 2em;
     color: $background-color-white;
@@ -445,6 +450,12 @@ section.contact {
     }
     &.button {
       padding-top: 40px;
+    }
+    &.contact_certs {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 50% 50%;
     }
     form {
       div {
@@ -666,7 +677,7 @@ form {
     }
   }
   input {
-    width: 30%;
+    width: 90%;
     padding: 12px 2px;
     margin: 0 4% 3% 4%;
     display: inline-block;
@@ -733,12 +744,12 @@ main.login {
     display: inline-block;
   }
   input {
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left;
+    padding: 12px 80px;
+    //display: inline-block;
+    //border: 1px solid black;
+    //border-radius: 4px;
+    //cursor: pointer;
+    //float: left;
   }
   input.btn {
     width: 200px;
@@ -1064,18 +1075,19 @@ main.store_single_view {
     position: initial;
     ul {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+      white-space: nowrap;
     }
   }
 
   .site-nav li {
     //border-right: 1px solid $theme-color-green;
     border-bottom: none;
-    //padding: 10px;
+    padding: 0;
   }
 
   .site-nav a {
-    padding: 0;
+    padding: 0 10px;
     //margin-left: 3em;
   }
 
@@ -1123,11 +1135,10 @@ main.store_single_view {
         bottom: 4%;
         width: 24%;
         left: 73%;
-      }
-      &.site-nav {
-        //position: absolute;
-        //top: 13%;
-        //right: 29px;
+        //margin: 0 auto;
+        //display: grid;
+        //grid-template-columns: 50% 50%;
+        //max-width: 1200px;
       }
     }
     a {

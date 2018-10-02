@@ -16,7 +16,7 @@ main {
   max-width: 100%;
   margin: 0 auto; }
 
-div.container {
+div.header {
   max-width: 1200px;
   margin: auto;
   display: grid;
@@ -214,7 +214,7 @@ section.ribbon {
     width: 200px;
     height: auto;
     display: block;
-    margin: 0 auto 15px auto; }
+    margin: 0 450px 0 auto; }
   section.ribbon p {
     margin: 20px 0 15px -20px;
     text-indent: 1em;
@@ -257,6 +257,9 @@ p.philosophy {
 #product-section {
   text-align: center;
   padding: 5% 0 5% 0; }
+  #product-section .product_list {
+    max-width: 1200px;
+    margin: 0 auto; }
   #product-section h1 {
     font-size: 2em;
     color: white;
@@ -339,6 +342,11 @@ section.contact {
     width: 100%; }
   section.contact div.button {
     padding-top: 40px; }
+  section.contact div.contact_certs {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%; }
   section.contact div form div {
     display: flex;
     justify-content: center; }
@@ -499,7 +507,7 @@ form input.btn {
   margin: 11px auto;
   float: none; }
 form input {
-  width: 30%;
+  width: 90%;
   padding: 12px 2px;
   margin: 0 4% 3% 4%;
   display: inline-block;
@@ -551,12 +559,7 @@ main.login {
   main.login label {
     display: inline-block; }
   main.login input {
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left; }
+    padding: 12px 80px; }
   main.login input.btn {
     width: 200px;
     margin: 40px 144px 27px 22px;
@@ -788,13 +791,15 @@ main.store_single_view {
     position: initial; }
     .site-nav ul {
       display: flex;
-      justify-content: space-between; }
+      justify-content: flex-end;
+      white-space: nowrap; }
 
   .site-nav li {
-    border-bottom: none; }
+    border-bottom: none;
+    padding: 0; }
 
   .site-nav a {
-    padding: 0; }
+    padding: 0 10px; }
 
   .site-nav a:hover,
   .site-nav a:focus {

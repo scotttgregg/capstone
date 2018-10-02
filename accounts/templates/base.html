@@ -13,14 +13,14 @@
 </head>
 <body class="overlay">
 <header>
-    <div class="container">
+    <div class="header">
         <div class="logo">
             <h1 class="logo"><a href="{% url 'home' %}">Primal Prowess<span class="rob">| Rob Bozada</span></a></h1>
             <h2 class="logo">Online Personal Fitness Training</h2>
         </div>
         <nav class="site-nav">
             <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' %}`">Home</a></li>
                 <li><a href="{% url 'blog_home' %}">Blog</a></li>
                 <li><a href="{% url 'store' %}">Shop Custom Programs</a></li>
                 {% if user.is_authenticated %}
