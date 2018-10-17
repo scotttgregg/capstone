@@ -22,7 +22,7 @@ def home(request):
         email_from = request.POST.get("contact_email")
         msg = EmailMultiAlternatives(subject, message, email_from, [settings.EMAIL_ADDRESS])
         msg.send()
-        return render()
+        return HttpResponseRedirect('/')
     return render(request, "accounts/home.html", {'form': form, 'products': products})
 
 
