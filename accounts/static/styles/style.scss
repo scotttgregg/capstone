@@ -173,7 +173,7 @@ span.rob {
 }
 
 .perm-nav {
-  bottom: -35px;
+  bottom: -46px;
   left: 0;
   position: absolute;
   overflow: hidden;
@@ -450,12 +450,6 @@ section.contact {
     }
     &.button {
       padding-top: 40px;
-    }
-    &.contact_certs {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 50% 50%;
     }
     form {
       div {
@@ -1119,8 +1113,13 @@ main.store_single_view {
 
 @media (min-width: 1023px) {
 
-  .site-nav {
-    //margin: 0;
+  div.contact_certs {
+
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
   }
 
   header {
@@ -1132,13 +1131,19 @@ main.store_single_view {
     }
     nav {
       &.perm-nav {
-        bottom: 4%;
-        width: 24%;
-        left: 73%;
-        //margin: 0 auto;
-        //display: grid;
-        //grid-template-columns: 50% 50%;
-        //max-width: 1200px;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        max-width: 1200px;
+        ul {
+          grid-column-start: 2;
+          justify-self: end;
+          li {
+            width: 230px;
+          }
+        }
       }
     }
     a {

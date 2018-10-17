@@ -15,7 +15,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 def home(request):
     form = ContactForm()
-    products = ShopItem.objects.all().order_by('-id')[:4]
+    products = ShopItem.objects.all().order_by('-id')[:3]
     if request.method == "POST":
         subject = 'New Contact {}'.format(request.POST.get("contact_name"))
         message = request.POST.get("content")

@@ -130,7 +130,7 @@ span.rob {
   transform: translateY(-3px) rotate(-90deg); }
 
 .perm-nav {
-  bottom: -35px;
+  bottom: -46px;
   left: 0;
   position: absolute;
   overflow: hidden;
@@ -342,11 +342,6 @@ section.contact {
     width: 100%; }
   section.contact div.button {
     padding-top: 40px; }
-  section.contact div.contact_certs {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 50% 50%; }
   section.contact div form div {
     display: flex;
     justify-content: center; }
@@ -817,13 +812,27 @@ main.store_single_view {
     justify-content: center; } }
 /* ------------ MIN-WIDTH 1023 ------------- */
 @media (min-width: 1023px) {
+  div.contact_certs {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%; }
+
   header div.container {
     max-width: 1200px;
     margin: 0 auto 20px auto; }
   header nav.perm-nav {
-    bottom: 4%;
-    width: 24%;
-    left: 73%; }
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 1200px; }
+    header nav.perm-nav ul {
+      grid-column-start: 2;
+      justify-self: end; }
+      header nav.perm-nav ul li {
+        width: 230px; }
   header a.action {
     border-radius: 5px;
     width: 49%; }
