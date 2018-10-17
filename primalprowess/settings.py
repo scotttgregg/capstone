@@ -14,21 +14,12 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^^4a@m8_^z-oj1j%*u)p%t#%kdq(fi4)aklwp2cpob*#mw4t8o'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = [
-    "f63de5ea.ngrok.io",
-    "127.0.0.1",
-    "localhost"
-]
 
 # Application definition
 
@@ -83,12 +74,7 @@ WSGI_APPLICATION = 'primalprowess.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+
 
 AUTHENTICATION_BACKENDS = (
     # 'oscar.apps.customer.auth_backends.EmailBackend',
@@ -138,23 +124,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'accounts', 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'profile'
 
 
-# Email Settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-ACCOUNT_EMAIL_VERIFICATION = "none"
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''  #  email
-EMAIL_HOST_PASSWORD = ''      #  password
-EMAIL_PORT = 587
+
 
 # Global martor settings
 # Input: string boolean, `true/false`
