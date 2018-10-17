@@ -9,7 +9,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.conf import settings
 import os
 from django.utils import timezone
-
+from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -20,7 +20,7 @@ def home(request):
         subject = 'New Contact {}'.format(request.POST.get("contact_name"))
         message = request.POST.get("content")
         email_from = request.POST.get("contact_email")
-        msg = EmailMultiAlternatives(subject, message, email_from, ["scotttgregg@gmail.com"])
+        msg = EmailMultiAlternatives(subject, message, email_from, [settings.EMAIL_ADDRESS])
         msg.send()
         return render()
     return render(request, "accounts/home.html", {'form': form, 'products': products})
@@ -169,7 +169,7 @@ def success(request):
 def email(recipient):
     subject = 'Thank you for your purchase! Follow the instructions in email'
     message = 'Fill out the attached form and send it back to rob.bozada@nike.com'
-    email_from = settings.EMAIL_HOST_USER
+    email_from = settings.EMAIL_ADDRESS
     msg = EmailMultiAlternatives(subject, message, email_from, [recipient])
     # TODO: Change this to the correct file and filename
     pdf = open(os.path.join(settings.BASE_DIR, 'media', 'PP-Intake-Form-PDF.pdf'), 'rb').read()
