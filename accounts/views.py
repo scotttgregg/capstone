@@ -120,8 +120,11 @@ def profile_edit(request):
         image = request.FILES.get('profile_img')
         if image:
             user.image = image
+        user.name = request.POST.get('name')
+        user.height = request.POST.get('height')
         user.height = request.POST.get('height')
         user.weight = request.POST.get('weight')
+        user.medical = request.POST.get('medical')
         user.bio = request.POST.get('bio')
         user.goals = request.POST.get('goals')
         user.email = request.POST.get('email')

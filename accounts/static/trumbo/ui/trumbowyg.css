@@ -30,6 +30,7 @@
 
 .trumbowyg-box,
 .trumbowyg-editor {
+  max-width: 1100px;
   display: block;
   position: relative;
   border: 1px solid #DDD;

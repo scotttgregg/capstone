@@ -5,22 +5,29 @@
     <main class="profile_page">
         {% if user.is_staff %}
             <ul>
-            <li class="admin-button"><a href="{% url 'store_create' %}">New Shop Item</a></li>
-            <li class="admin-button"><a href="{% url 'blog_create' %}?next=/">New Blog Post</a></li>
+                <li class="admin-button"><a href="{% url 'store_create' %}">New Shop Item</a></li>
+                <li class="admin-button"><a href="{% url 'blog_create' %}?next=/">New Blog Post</a></li>
             </ul>
         {% endif %}
         <section class="profile_pic">
             {% profile_image_or_default user %}
         </section>
         <div class="profile_page">
-            <p class="profile">Username: <span>{{ user.username }}</span></p>
-            <p class="profile">Height: {{ user.height }}</p>
-            <p class="profile">Weight: {{ user.weight }}</p>
-            <p class="profile">Bio: {{ user.bio }}</p>
-            <p class="profile">Fitness Goals: {{ user.goals }}</p>
-            <p class="profile">Email: {{ user.email }}</p>
-            <p class="profile"><a class="edit_profile" href="{% url 'profile_edit' %}">Edit Profile</a></p>
+            <aside class="aside_profile">
+                <div class="profile_trainer_card">
+                    <p class="profile">Username: <span>{{ user.username }}</span></p>
+                    <p class="profile">Email: {{ user.email }}</p>
+                    <p class="profile">Age: {{ user.age }}</p>
+                    <p class="profile">Height: {{ user.height }}</p>
+                    <p class="profile">Weight: {{ user.weight }}</p>
+                    <p class="profile">Medical Concerns: {{ user.medical }}</p>
+                    <p class="profile">Bio: {{ user.bio }}</p>
+                    <p class="profile">Fitness Goals: {{ user.goals }}</p>
+                    <p class="profile"><a class="edit_profile" href="{% url 'profile_edit' %}">Edit Profile</a></p>
+                </div>
+            </aside>
         </div>
+
     </main>
 
 {% endblock %}
