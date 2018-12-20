@@ -4,7 +4,7 @@
 {% block content %}
 
     <main class="profile_edit">
-{#        <h1>Profile Edit</h1>#}
+        {#        <h1>Profile Edit</h1>#}
 
         <div class="profile_edit">
             {#            <section class="profile_pic">#}
@@ -15,20 +15,26 @@
             <form id="edit_profile_form" role="form" enctype="multipart/form-data" method="post">
                 {% csrf_token %}
 
+                <label class="email edit_profile">Email:</label>
+                <input class="edit_profile" name="email" id="email"
+                          form="edit_profile_form" required>
+
                 <label class="h_and_w edit_profile">Height:</label>
-                <textarea class="edit_profile" name="height" id="height" form="edit_profile_form">{{ user.height }}</textarea>
+                <input class="edit_profile" name="height" id="height"
+                          form="edit_profile_form">
 
                 <label class="h_and_w edit_profile">Weight:</label>
-                <textarea class="edit_profile" name="weight" id="weight" form="edit_profile_form">{{ user.weight }}</textarea>
+                <input class="edit_profile" name="weight" id="weight"
+                          form="edit_profile_form">
 
                 <label class="bio edit_profile">Bio:</label>
                 <textarea class="edit_profile" name="bio" id="bio" form="edit_profile_form">{{ user.bio }}</textarea>
 
                 <label class="h_and_w edit_profile">Fitness Goals:</label>
-                <textarea class="edit_profile" name="goals" id="goals" form="edit_profile_form">{{ user.goals }}</textarea>
+                <textarea class="edit_profile" name="goals" id="goals"
+                          form="edit_profile_form">{{ user.goals }}</textarea>
 
-                <label class="email edit_profile">Email:</label>
-                <textarea class="edit_profile" name="email" id="email" form="edit_profile_form">{{ user.email }}</textarea>
+
 
                 <div class="buttons save reset">
                     <input class="btn btn-primary" value="Save Changes" type="submit">

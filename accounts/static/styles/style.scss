@@ -815,21 +815,29 @@ main.sign_up {
 /* ------------ Profile Page ------------- */
 
 main.profile_page {
+  max-width: 1024px;
+  margin: -430px auto 0 auto;
   div {
-    //padding: 0 0 30px 0;
-    background-color: $background-color-white;
-    //border-bottom-left-radius: 5px;
-    //border-bottom-right-radius: 5px;
-    &.profile_page {
-      margin: 0 auto 0 auto;
-      padding: 45px 30px;
-      max-width: 1024px;
+    background-color: $white;
+    margin: 0 auto 0 auto;
+    padding: 45px 30px;
+    max-width: 1024px;
+    h1 {
+      font-size: 1.25em;
+      font-weight: bold;
     }
-    p.profile {
-      //padding: 3% 0;
-      span {
-        font-size: 1.5em;
-        color: $call-to-action02;
+    p {
+      &.profile {
+        padding: 10px 0;
+      }
+      &.message {
+        padding: 0 0 40px 0;
+      }
+    }
+    span {
+      &.username {
+      font-size: 1.5em;
+      color: $call-to-action02;
       }
     }
   }
@@ -849,8 +857,7 @@ main.profile_page {
     display: block;
     margin: 0 auto
   }
-  max-width: 1024px;
-  margin: -430px auto 0 auto;
+
   li {
     a {
       background-color: black;

@@ -13,9 +13,11 @@
             {% profile_image_or_default user %}
         </section>
         <div class="profile_page">
-            <aside class="aside_profile">
+            <p class="message">[Your profile page and information will only be seen by site administration...]</p>
+            <div class="stats_and_info">
                 <div class="profile_trainer_card">
-                    <p class="profile">Username: <span>{{ user.username }}</span></p>
+                    <h1>Member Info</h1>
+                    <p class="profile">Username: <span class="username">{{ user.username }}</span></p>
                     <p class="profile">Email: {{ user.email }}</p>
                     <p class="profile">Age: {{ user.age }}</p>
                     <p class="profile">Height: {{ user.height }}</p>
@@ -25,7 +27,7 @@
                     <p class="profile">Fitness Goals: {{ user.goals }}</p>
                     <p class="profile"><a class="edit_profile" href="{% url 'profile_edit' %}">Edit Profile</a></p>
                 </div>
-            </aside>
+            </div>
         </div>
 
     </main>
